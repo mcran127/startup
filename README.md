@@ -1,3 +1,3 @@
 # startup
 ## Notes.md
-[Notes.md](/Users/matthewcrandall/Documents/cs260/startup/notes)
+[Notes.md](https://github.com/mcran127/startup/blob/main/notes.md)
