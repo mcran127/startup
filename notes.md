@@ -16,3 +16,7 @@ when this happens, modify file to keep wanted changes. push out afterwards
 ## Forking a repo
 copy of repository but cloned to github instead of local machine. 
 You can pull original repo changes but cant force push. You can request to push though called pull request
+
+# EC2
+Elastic IP 174.129.248.23
+remote in using ssh -i /Users/matthewcrandall/Documents/cs260/cs260KP.pem ubuntu@174.129.248.23
