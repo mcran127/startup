@@ -50,8 +50,7 @@ Ever wanted to show off your favorite Pokemon teams? Or perhaps you're looking f
 
 - HTML - Uses correct HTML structure over 3 pages. One for the login, one for the main page where latest teams are shown, and one for the builder page itself.
 - CSS - Application styling to properly display all images regardless of screen size without feeling too cluttered. Simple design and color to not overwhelm site visitors.
-- Javascript - 
-- React - Provides login
+- Javascript & React - Provides login, can move to the team builder page, can add pokemon to team, can submit teams to database. React will be used for routing.
 - Service - Endpoints for login, retrieving pokemon and data, and retreiving most current team builds.
 - Database - Stores the most recent users and their teams.
 - WebSocket - Most recent team builds are displayed to other site visitors.
