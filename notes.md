@@ -34,11 +34,11 @@ remote in using ssh -i /Users/matthewcrandall/Documents/cs260/cs260KP.pem ubuntu
 Ever wanted to show off your favorite Pokemon teams? Or perhaps you're looking for ideas on a new playthrough? This is a simple team builder site that constantly loads the latest additions from all players. Simply search the name of the Pokemon you're looking for and add it to your team. You'll also be able to look at some basic information for each Pokemon as you look it up. 
 
 ## Design
-https://github.com/mcran127/startup/blob/main/cs260Login.png
+![Rough mockup of the login page](https://github.com/mcran127/startup/blob/main/cs260Login.png)
 
-https://github.com/mcran127/startup/blob/main/cs260Main.png
+![Rough mockup of the main page](https://github.com/mcran127/startup/blob/main/cs260Main.png)
 
-https://github.com/mcran127/startup/blob/main/cs260Builder.png
+![Rough mockup of the team builder page](https://github.com/mcran127/startup/blob/main/cs260Builder.png)
 
 ## Key Features
 - Secure HTTPS login
