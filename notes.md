@@ -73,7 +73,7 @@ Replacing port 80 (unsecured) to 443 (secured)
 ## HTML Startup
 
 Code is structured <*></*>
-Blocks of code versus inline code. (<header>, <main>, <Section>, vs. <ul>, <li>, <tr> <th>, <div>, etc.)
+Blocks of code versus inline code. <header>, <main>, <Section>, vs. <ul>, <li>, <tr> <th>, <div>, etc.
 body, header, footer, main, section, aside, p, table, ol/ul, div, and span
 
 ## HTML Inputs
