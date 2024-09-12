@@ -54,3 +54,15 @@ Ever wanted to show off your favorite Pokemon teams? Or perhaps you're looking f
 - Service - Endpoints for login, retrieving pokemon and data, and retreiving most current team builds.
 - Database - Stores the most recent users and their teams.
 - WebSocket - Most recent team builds are displayed to other site visitors.
+
+
+# HTTPS, TLS, and Certificates
+
+*Secure* HTTP
+TLS/SSL, uses a handshake
+Certificates are a 3rd party generated item for checking/confirming who owns a site. Let's encrypt made it free, issues certificate to requester
+
+## Caddy
+
+Caddyfile includes startup and simon
+Replacing port 80 (unsecured) to 443 (secured)
