@@ -71,6 +71,16 @@ Replacing port 80 (unsecured) to 443 (secured)
 # HTML
 
 ## HTML Startup
+
 Code is structured <*></*>
 Blocks of code versus inline code. (<header>, <main>, <Section>, vs. <ul>, <li>, <tr> <th>, <div>, etc.)
 body, header, footer, main, section, aside, p, table, ol/ul, div, and span
+
+## HTML Inputs
+
+HTML accepts user data through forms, now more used in JavaScript
+Now more used for structure but we still have input elements.
+text, password, email, tel, url, number, checkbox, radio, range, date, datetime-local, month, week, color, file, submit
+Contains attributes such as name, preset value, disabled to stop interactivity, and required
+Some have validation prebuilt in like alpha, numerical, must be a url, etc.
+Pattern exists that must follow a certain pattern for text, search, url, tel, email, and password. Should also be built into JavaScript
