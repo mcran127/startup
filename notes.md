@@ -84,3 +84,11 @@ text, password, email, tel, url, number, checkbox, radio, range, date, datetime-
 Contains attributes such as name, preset value, disabled to stop interactivity, and required
 Some have validation prebuilt in like alpha, numerical, must be a url, etc.
 Pattern exists that must follow a certain pattern for text, search, url, tel, email, and password. Should also be built into JavaScript
+
+## HTML Media
+
+img, audio, video, svg, and canvas
+first three are can be linked to external sources
+other two render in code
+image takes an absolute or relative link, audio takes url and controls can autoplay or loop, videos have similar controls, takes url, and might need crossorigin="anonymous"
+scalable vector graphics and canvas both draw the items.
