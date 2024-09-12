@@ -66,3 +66,11 @@ Certificates are a 3rd party generated item for checking/confirming who owns a s
 
 Caddyfile includes startup and simon
 Replacing port 80 (unsecured) to 443 (secured)
+
+
+# HTML
+
+## HTML Startup
+Code is structured <*></*>
+Blocks of code versus inline code. (<header>, <main>, <Section>, vs. <ul>, <li>, <tr> <th>, <div>, etc.)
+body, header, footer, main, section, aside, p, table, ol/ul, div, and span
