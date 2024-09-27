@@ -92,3 +92,12 @@ first three are can be linked to external sources
 other two render in code
 image takes an absolute or relative link, audio takes url and controls can autoplay or loop, videos have similar controls, takes url, and might need crossorigin="anonymous"
 scalable vector graphics and canvas both draw the items.
+
+
+# CSS
+
+## CSS Practice
+
+CSS is structured body type {info}, with info being structured format: specifier;
+Some things are color, background-color, font-family/weight/style/size, padding, borders, and more
+For color, use hex, measurements can be done in percentages and things like px or em
