@@ -93,6 +93,10 @@ other two render in code
 image takes an absolute or relative link, audio takes url and controls can autoplay or loop, videos have similar controls, takes url, and might need crossorigin="anonymous"
 scalable vector graphics and canvas both draw the items.
 
+## HTML Startup
+
+Created 3 pages, a login that is index.html, a main page where you'll be able to see images of 6 pokemon that others created as their team, and a button to create your own team that'll take you to the last page, a team builder page where you can see pokemon youve added, their stats, and a submit button that will eventually add the tean you just made to the main page.
+
 
 # CSS
 
