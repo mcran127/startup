@@ -105,3 +105,10 @@ Created 3 pages, a login that is index.html, a main page where you'll be able to
 CSS is structured body type {info}, with info being structured format: specifier;
 Some things are color, background-color, font-family/weight/style/size, padding, borders, and more
 For color, use hex, measurements can be done in percentages and things like px or em
+
+## CSS Startup
+
+
+# Javascript
+
+## Javascript
