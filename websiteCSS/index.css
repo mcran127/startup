@@ -1,5 +1,5 @@
 * {
-    color: black;
+    color: blue;
     font-family: Arial, sans-serif;
 }
 
@@ -8,10 +8,26 @@ body {
 }
 
 h1 {
-    height: 100%;
-    font-weight: 3em;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    font-weight: 3em;
     justify-content: center;
     align-items: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: darkgray;
+    color: white;
+    justify-content: center;
+}
+
+p {
+    align-items: left;
+}
+
+a {
+    align-items: right;
 }
