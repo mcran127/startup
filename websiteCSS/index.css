@@ -1,0 +1,17 @@
+* {
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+}
+
+h1 {
+    height: 100%;
+    font-weight: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
