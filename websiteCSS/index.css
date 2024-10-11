@@ -61,21 +61,19 @@ main {
 
 footer {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background-color: #222222;
     color: white;
-    flex: 0 .5em
+    padding: 0.5em;
 }
 
 p {
     color: white;
-    justify-content: left;
-    align-items: left;
-    flex: .5 50%;
+    margin: 0;
 }
 
 a {
-    justify-content: right;
-    align-items: right;
-    flex: .5 50%;
+    color: white;
+    margin: 0;
 }

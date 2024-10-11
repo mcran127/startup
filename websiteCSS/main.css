@@ -1,0 +1,33 @@
+* {
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;  
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222222;
+    color: white;
+    padding: 0.5em;
+}
+
+p {
+    color: white;
+    margin: 0;
+}
+
+a {
+    color: white;
+    margin: 0;
+}
