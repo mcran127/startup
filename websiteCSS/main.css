@@ -13,6 +13,15 @@ body {
     height: 100%;  
 }
 
+span {
+    display: flex;
+}
+
+div {
+    font-size: 3em;
+    text-decoration: underline;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
