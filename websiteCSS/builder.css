@@ -22,15 +22,41 @@ h1 {
     text-decoration: underline;
 }
 
+#search {
+    flex: 0 2em;
+    flex-direction: column;
+}
+
 table {
     border: none;
     display: flex;
     width: 100%;
+    flex: 1;
 }
+
 
 td {
     text-align: center;
     vertical-align: middle;
+    flex: 1;
+}
+
+#combined {
+    display: flex;
+    flex-direction: row;
+}
+
+#currPokemon {
+    flex: .5;
+}
+
+#stats {
+    flex: .5;
+}
+
+button {
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
