@@ -9,8 +9,7 @@ html {
 
 body {
     display: flex;
-    flex-direction: column;
-    height: 100%;  
+    flex-direction: column; 
 }
 
 h1 {
@@ -22,9 +21,21 @@ h1 {
     text-decoration: underline;
 }
 
-#search {
-    flex: 0 2em;
-    flex-direction: column;
+.search {
+    padding: 30px;
+    border-bottom: solid black;
+}
+
+form {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 100 px;
+}
+
+h2 {
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: underline solid black;
 }
 
 table {
@@ -50,19 +61,22 @@ img {
 #combined {
     display: flex;
     flex-direction: row;
+    flex: 0 10em;
 }
 
 #currPokemon {
     flex: .5;
+    height: auto;
 }
 
 #stats {
     flex: .5;
 }
 
-button {
-    justify-content: center;
-    align-items: center;
+
+#SubmitButton {
+    text-align: center;
+    vertical-align: middle;
 }
 
 footer {
@@ -82,4 +96,6 @@ p {
 a {
     color: white;
     margin: 0;
+    text-align: center;
+    vertical-align: middle;
 }
