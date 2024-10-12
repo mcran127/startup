@@ -77,6 +77,7 @@ img {
 #SubmitButton {
     text-align: center;
     vertical-align: middle;
+    padding: 15px;
 }
 
 footer {
