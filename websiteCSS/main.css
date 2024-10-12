@@ -15,11 +15,29 @@ body {
 
 span {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#newDeck {
+    justify-content: center;
+    align-items: right;
+    text-align: center;
+    flex-grow: 1;
+}
+
+button {
+    float: right;
+    width: 130px;
+    font-size: .5em;
 }
 
 div {
     font-size: 3em;
     text-decoration: underline;
+    text-align: center;
+    flex-grow: 1;
 }
 
 footer {
