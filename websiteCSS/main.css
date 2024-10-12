@@ -40,6 +40,37 @@ div {
     flex-grow: 1;
 }
 
+section {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    flex-direction: row;
+}
+
+tr {
+    flex-direction: row;
+}
+
+#names {
+    flex: .3;
+    text-align: center;
+    margin: 2px;
+}
+
+#images {
+    flex: .7;
+    margin: 2px;
+}
+
+td {
+    text-align: center;
+    vertical-align: center;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
