@@ -18,3 +18,4 @@ For this deliverable, I used CSS to style the webpage
 *Elements resize based on screen size except the current pokemon in builder which I wanted to be fairly big even if it meant scrolling vertically. However, it's width is still limited.
 *Images are still primarily placeholders
 *HTMl was adjusted in order to properly create head section
+*Naviagtion is limited to the buttons so there's no naviagation section
