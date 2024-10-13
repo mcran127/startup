@@ -108,7 +108,34 @@ For color, use hex, measurements can be done in percentages and things like px o
 
 ## CSS Startup
 
+Pain. Use 100%, align-text, and vertical-align more
+
 
 # Javascript
 
-## Javascript
+## Javascript Arrays
+
+console.log(). console.time and timeEnd, count, 
+can be added to script of html or through src of outside file
+define vars with let or const.
+== vs ===
+if, else and else if. also can use a === 1 ? console.log(1) : console.log('not 1');
+loop with for, whiles
+strings and unicode. use things like length, index of, split, etc
+functions can take operations as parameters, and functions in other functions
+debounce is a "timer", arrow => is this parameter
+arrays have push, pop, every, reduce, map, fine, forEach, etc.
+
+## Javascript Document Object Model
+
+JSON has key pairs, uses parse and stringify. Undefineds are removed
+objects have entries, split by keys and values. this will mean the object itself. private by adding #
+extends for inheritence and use super to get parent functions
+...var gets the all of the last parameter in an array. ONLY THE LAST
+spread does the opposite
+try catch finally is try to do code, do if fails, do regardless
+fallback is try in try, and do something similar but maybe worse in the catch
+destructuring, like an array is get part. (b,c) = a where a = [1,2,3,4] is [1,2]. in objects, specify property
+scope can be global, module, function, or block. This is global unless in a function or object where its the obj or the object that owns the function
+JS has modules, ES. Must export and import. Can use event listeners
+DOM is split up into nodes. To edit, append to tree. CreateElement and appendChild. Can directly add html, used by hackers
