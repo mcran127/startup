@@ -75,10 +75,11 @@ Replacing port 80 (unsecured) to 443 (secured)
 Code is structured <*></*>
 Blocks of code versus inline code. \<header\>, \<main\>, \<Section\>, vs. \<ul\>, \<li\>, \<tr\> \<th\>, \<div\>, etc.
 body, header, footer, main, section, aside, p, table, ol/ul, div, and span
-\<html\> is top level, \<head\> is metadata, \<body\> is main page, \<main\> is main content
+\<html\> is top level, \<head\> is metadata, \<body\> is main page, \<main\> is main content. \<div\> is blocks
 attributes are things like id and class
 links are \<a href = "(link)"\>
 comment with \<!-- -->
+default page of index.html
 
 ## HTML Inputs
 
@@ -88,6 +89,7 @@ text, password, email, tel, url, number, checkbox, radio, range, date, datetime-
 Contains attributes such as name, preset value, disabled to stop interactivity, and required
 Some have validation prebuilt in like alpha, numerical, must be a url, etc.
 Pattern exists that must follow a certain pattern for text, search, url, tel, email, and password. Should also be built into JavaScript
+
 
 ## HTML Media
 
