@@ -75,6 +75,10 @@ Replacing port 80 (unsecured) to 443 (secured)
 Code is structured <*></*>
 Blocks of code versus inline code. \<header\>, \<main\>, \<Section\>, vs. \<ul\>, \<li\>, \<tr\> \<th\>, \<div\>, etc.
 body, header, footer, main, section, aside, p, table, ol/ul, div, and span
+\<html\> is top level, \<head\> is metadata, \<body\> is main page, \<main\> is main content
+attributes are things like id and class
+links are \<a href = "(link)"\>
+comment with \<!-- -->
 
 ## HTML Inputs
 
@@ -139,3 +143,19 @@ destructuring, like an array is get part. (b,c) = a where a = [1,2,3,4] is [1,2]
 scope can be global, module, function, or block. This is global unless in a function or object where its the obj or the object that owns the function
 JS has modules, ES. Must export and import. Can use event listeners
 DOM is split up into nodes. To edit, append to tree. CreateElement and appendChild. Can directly add html, used by hackers
+
+## Javascript Promises
+
+Javascript has local storage between HTML pages and can be used as a cache. Uses setItem(name, value), getItem(name), clear(), and removeItem(name)
+Must be string, number, or booleon, or use stringify and parse with json.
+Javascript Promise lets HTMl run in the main thread while the JS runs in the background.
+Pending (in progress), Fulfilled (done), Rejected (cannot complete)
+const coinToss = new Promise((resolve, reject) => { setTimeout(() => {...})}) if Fulfilled or else Rejected
+afterwards to then if success, catch if fails, and finally. Similar to throw catch.
+
+## Javascript ASync/await
+
+Can have a then catch finally chain, or try catch finally block where await Promise(answer) wil block future code unitl it returns
+await cannot be called unless at top level of javascript or function is async. async function() {...}
+async says function will return a promise
+Good when multiple returns are required
