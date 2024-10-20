@@ -151,8 +151,9 @@ or make things like asides disappear by setting display none.
 
 Grid layouts. grid-template-columns repeat autofill minmax 300px 1fr
 
-Flexbox
-
+Flexbox picked by display flex. Flex direction is either column or default row. or reverse
+flex 0 80 px is doesn't grow and minimum 80 px, flex 1 is gets 1 unit per growth. you could do 1 and 3 for 25%/75%
+again, use @media (orientation...) to change flex direction. maybe hide when max-height is so big
 
 ## CSS Frameworks
 
