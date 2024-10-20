@@ -157,7 +157,18 @@ again, use @media (orientation...) to change flex direction. maybe hide when max
 
 ## CSS Frameworks
 
+use inspect to check, you can see on elements tab. Styles pane is css properties on current element which highlights browser window
+Edit from there to see what changes
+CSS Frameworks include tailwind focusing on smaller definitions straight into HTMl rather than other files
+Bootstrap is huge, put in header file. Can also put in script for javascript.
+Btn-primary is blue rounded button, looks better than plain.
+Accordian component
 
+'''
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+    Accordion Button 2
+</button>
+'''
 
 ## CSS Startup
 
