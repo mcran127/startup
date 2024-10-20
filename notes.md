@@ -165,9 +165,9 @@ Btn-primary is blue rounded button, looks better than plain.
 Accordian component
 
 '''
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+\<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"\>
     Accordion Button 2
-</button>
+\</button\>
 '''
 
 ## CSS Startup
