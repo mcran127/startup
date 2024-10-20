@@ -115,7 +115,7 @@ Can put CSS in HTMl by using style="info". You can also use the style element in
 Finally, use \<link rel="stylesheet" href="doc.css"\> usually using link. Bottom will override top on the sheet and inline overrides linked
 CSS defines in boxes. From in->out, content, padding (background color), border (color, thickness, line style), and margin (whitespace)
 Change box sizing from content-box to border-box to redefine to show actual size.
-* is all elements.
+\* is all elements.
 children have descendants (a b), children (a > b), general siblings (a ~ b), and aadjacent siblings (a + b)
 class selectors are .name or can add selectors so selector.name. ID's are similar except they use #name
 can also attribute select like selector[class="name"]. pseudo selectors like section:hover
