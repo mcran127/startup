@@ -108,9 +108,22 @@ Created 3 pages, a login that is index.html, a main page where you'll be able to
 
 ## CSS Practice
 
-CSS is structured body type {info}, with info being structured format: specifier;
+CSS is structured by rules where rules are, selector {info}, with info being structured property: value;
 Some things are color, background-color, font-family/weight/style/size, padding, borders, and more
 For color, use hex, measurements can be done in percentages and things like px or em.
+Can put CSS in HTMl by using style="info". You can also use the style element in html \<style\>
+Finally, use \<link rel="stylesheet" href="doc.css"\> usually using link. Bottom will override top on the sheet and inline overrides linked
+CSS defines in boxes. From in->out, content, padding (background color), border (color, thickness, line style), and margin (whitespace)
+Change box sizing from content-box to border-box to redefine to show actual size.
+* is all elements.
+children have descendants (a b), children (a > b), general siblings (a ~ b), and aadjacent siblings (a + b)
+class selectors are .name or can add selectors so selector.name. ID's are similar except they use #name
+can also attribute select like selector[class="name"]. pseudo selectors like section:hover
+Declarations inclue background-color, border, border-radius, box-shadow, columns, column-rule, color, display, filter, float,
+flex, font, grid, height, margin, max/min-width/height, opactiy, overflow, position, padding, left, text-align, top, transfrom,
+width, and z-index.
+Units include px (pixels), pt (1/72 in), in, cm, %, em (multiplier of m in parent font), rem (but for root),
+ex (height of element), vw/h (viewport), vmin/max.
 
 ## CSS Startup
 
