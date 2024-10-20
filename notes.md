@@ -119,11 +119,44 @@ Change box sizing from content-box to border-box to redefine to show actual size
 children have descendants (a b), children (a > b), general siblings (a ~ b), and aadjacent siblings (a + b)
 class selectors are .name or can add selectors so selector.name. ID's are similar except they use #name
 can also attribute select like selector[class="name"]. pseudo selectors like section:hover
+
+### CSS Declarations
+
 Declarations inclue background-color, border, border-radius, box-shadow, columns, column-rule, color, display, filter, float,
 flex, font, grid, height, margin, max/min-width/height, opactiy, overflow, position, padding, left, text-align, top, transfrom,
 width, and z-index.
 Units include px (pixels), pt (1/72 in), in, cm, %, em (multiplier of m in parent font), rem (but for root),
 ex (height of element), vw/h (viewport), vmin/max.
+
+### CSS Fonts
+
+Serif, sans-Serif, fixed, and symbol. Serif have the swoosh. Fixed is same size and symbols are symbols
+Import fonts to be used later with @font-face with font-family: name; and src: url("url");
+Can also do @import url("link");
+
+### CSS Animation
+
+to animate, you need animation-name and animation-duration. the @keyframes name then from {} to {}
+use % at another keyframe like 50%
+
+
+## CSS Flex
+
+Responsive design for different screens. None doesnt display, block is parent element, inline is content,
+flex is flexible and grid
+Viewport meta tag \<meta name="viewport" content="width=device-width, initial-scale=1" /> doesnt scale page
+float property moves to left or right and other stuff wraps aroubnd it as screen changes
+media queries for things like mobile changes. @media (orientation: portrait) {div {transform: rotate(xdeg);}}
+or make things like asides disappear by setting display none.
+
+Grid layouts. grid-template-columns repeat autofill minmax 300px 1fr
+
+Flexbox
+
+
+## CSS Frameworks
+
+
 
 ## CSS Startup
 
