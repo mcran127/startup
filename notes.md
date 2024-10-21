@@ -219,3 +219,24 @@ Can have a then catch finally chain, or try catch finally block where await Prom
 await cannot be called unless at top level of javascript or function is async. async function() {...}
 async says function will return a promise
 Good when multiple returns are required
+
+
+# React
+
+## React Components
+
+Web Frameworks are meant to help build webpages by doing things like combining HTML and javascript or modularizing code
+Vue combines HTML, CSS, and Javascript into one file. HTML represented by template
+Svelte is similar but requires transpiler instead of runtime compiler
+React combines JavaScript and HTML with CSS outside
+Angular component defines whats combined together.
+React is named because pages react to you. Takes HTML into Javascript variant called JSX and then it becomes JavaScript
+Render function is put into the component as HTMl. \<div\> Component: \<Demo /> \</div\> has a function Demo
+returns a div with component: \<b\>hello world\<b\>
+You can also receive properties like \<Demo who="walke"\> where Demo is a function that returns \<b\> Hello {var.who}\</b\>Hello Walke
+State. React.useState. Can have internal state which returns current state and a function to update. You can use JSX without a function
+Instead of function style, can use class style but probably shouldn't.
+
+## React Vite
+
+## React Router
