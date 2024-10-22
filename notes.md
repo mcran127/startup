@@ -239,4 +239,15 @@ Instead of function style, can use class style but probably shouldn't.
 
 ## React Vite
 
+Toolchains are to help with the complexity. Things like code repositories for sharing code, linter for non-idomatic code,
+prettier formats code, transpiler is one language to another (SCSS to CSS, JSX to Javascript etc.)
+Polyfill is backwards compatible code, bundler is compatibility or performance on delivery to browser
+Minifier is removes whitespace to make code smaller and more efficient, testing to ensure correctness, and deployment
+We use github as repository, Vite for JSX, TS, development and debug, ESBuild for ES6 and Transpiling, +babel,
+Rollup for bundling, post css for CSS transpiling, and bash script for deployment
+
+### Vite
+
+Vite for bundling, debugging, and supports what we need. 
+
 ## React Router
