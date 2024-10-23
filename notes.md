@@ -249,5 +249,13 @@ Rollup for bundling, post css for CSS transpiling, and bash script for deploymen
 ### Vite
 
 Vite for bundling, debugging, and supports what we need. 
+.jsx for JSX files even though .js might work.
+opm run dev is a temporary directory vs run build executes build and trasnfers to dist
 
 ## React Router
+
+Single page HTML can look like muliple pages by displaying other info by JS. router routes manipulate DOM. We use react router DOM
+Not React router. \<BrowserRouter\> encapsulates application with \<NavLink to="/name"\> \</Link\> and \<Routes\> with
+\<Route path='/' element={<Home />\} exact />
+
+## React Reactivity
