@@ -259,3 +259,7 @@ Not React router. \<BrowserRouter\> encapsulates application with \<NavLink to="
 \<Route path='/' element={<Home />\} exact />
 
 ## React Reactivity
+
+Reactivity focuses on prop, render, and state. When jsx rendered, gets state and prop and then renders them when info changes
+things like const onChange and react.useState
+updateState is asynchronus. Might not happen immediately.
