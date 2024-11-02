@@ -7,68 +7,56 @@ html {
     height: 100%;
 }
 
-.body {
+body {
     display: flex;
     flex-direction: column;
     height: 100%;  
 }
 
-span {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    flex-grow: 1;
-}
 
-#newDeck {
+h1 {
+    display: flex;
+    flex-direction: column;
+    font-weight: 3em;
     justify-content: center;
-    align-items: right;
-    text-align: center;
+    align-items: center;
+    flex: 0 2em;
 }
 
-button {
-    float: right;
-    width: 130px;
-    font-size: .5em;
-}
-
-div {
-    font-size: 3em;
-    text-decoration: underline;
-    text-align: center;
-    flex-grow: 1;
-}
-
-section {
+h2 {
     display: flex;
-    height: 100%;
-    width: 100%;
+    font-size: medium;
+    background-color: white;
+    color: black;
+    flex : 0 3em;
+    justify-content: center;
+    align-items: center;
 }
 
-table {
-    width: 100%;
+form {
+    display: flex;
+    background-color: gray;
+    color: white;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ div {
+    align-items: center;
     flex-direction: row;
-}
+    justify-content: center;
+    border: black;
+    padding: 5px;
+ }
 
-tr {
-    flex-direction: row;
-}
-
-#names {
-    flex: .3;
-    text-align: center;
-    margin: 2px;
-}
-
-#images {
-    flex: .7;
-    margin: 2px;
-}
-
-td {
-    text-align: center;
-    vertical-align: center;
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: darkgray;
+    color: white;
 }
 
 footer {
