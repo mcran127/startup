@@ -263,3 +263,10 @@ Not React router. \<BrowserRouter\> encapsulates application with \<NavLink to="
 Reactivity focuses on prop, render, and state. When jsx rendered, gets state and prop and then renders them when info changes
 things like const onChange and react.useState
 updateState is asynchronus. Might not happen immediately.
+
+## React Startup
+
+### React Hooks
+
+Hooks can do what class style components can do and more. We've seen useState, but theres also useEffect when completes rendering,
+or when cleanup used. Hook dependancies for useEffect is an array in the second parameter. If empty, will only call when first rendered.
