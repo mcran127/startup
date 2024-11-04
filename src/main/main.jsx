@@ -1,5 +1,5 @@
 import React from 'react';
-import './scores.css';
+import './main.css';
 
 export function Main() {
   return (
