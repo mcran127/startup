@@ -9,7 +9,7 @@ import { Builder } from './builder/builder';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className='body bg-dark text-light'>
+      <body className='body bg-dark text-light'>
         <header className='container-fluid'>
           <nav className='navbar fixed-top navbar-dark'>
             <div className='navbar-brand'>
@@ -50,7 +50,7 @@ export default function App() {
             </a>
           </div>
         </footer>
-      </div>
+      </body>
     </BrowserRouter>
   );
 }
