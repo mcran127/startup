@@ -7,7 +7,7 @@ export function Main() {
       <h1>
           <span>
               <div>Latest Decks</div>
-              <a href="builder.html" id="newDeck">
+              <a href="builder" id="newDeck">
                   <button type="button">New Deck</button>
               </a>
           </span>

@@ -68,7 +68,7 @@ export function Builder() {
             </div>
         </div>
         <div id="SubmitButton">
-            <a href="main.html">
+            <a href="main">
             <button type="submit">Submit</button>
             </a>
         </div>
