@@ -23,7 +23,7 @@ export function Builder() {
                 <td>Pokemon Name Here</td>
             </tr>
         </table>
-        <div class="search">
+        <div className="search">
             <form action="#">
                 <input type="text" placeholder="Search Pokemon"
                     name="search">

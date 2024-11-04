@@ -20,7 +20,7 @@ export function Main() {
                 <th>TITLE by NAME</th>
                 <th>TITLE by NAME</th>
               </tr>
-              <tr id = "images">
+              <tr id="images">
                 <td><img src="https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755" alt="" height={200} width={300}></img></td>
                 <td><img src="https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755" alt="" height={200} width={300}></img></td>
                 <td><img src="https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755" alt="" height={200} width={300}></img></td>
@@ -32,7 +32,7 @@ export function Main() {
                   <th>TITLE by NAME</th>
                   <th>TITLE by NAME</th>
                 </tr>
-                <tr id = "images">
+                <tr id="images">
                   <td><img src="https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755" alt="" height={200} width={300}></img></td>
                   <td><img src="https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755" alt="" height={200} width={300}></img></td>
                   <td><img src="https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755" alt="" height={200} width={300}></img></td>
