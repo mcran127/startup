@@ -12,9 +12,6 @@ export default function App() {
       <body className='body bg-dark text-light'>
         <header className='container-fluid'>
           <nav className='navbar fixed-top navbar-dark'>
-            <div className='navbar-brand'>
-              Pokemon Team Builder<sup>&reg;</sup>
-            </div>
             <menu className='navbar-nav'>
               <li className='nav-item'>
                 <NavLink className='nav-link' to=''>
