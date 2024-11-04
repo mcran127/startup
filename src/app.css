@@ -65,8 +65,8 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    flex: 0 30px;
-    font-size: 1em;
+    flex: 0 15px;
+    font-size: .5em;
   }
   
 .container-fluid {
