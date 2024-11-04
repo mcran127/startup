@@ -61,22 +61,23 @@ main {
 
 footer {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #222222;
     color: white;
     padding: 0.5em;
+    left: 0;
+    right: 0;
 }
 
 span {
     color: white;
     margin: 0; 
-    justify-content: left;
-    align-items: left;
+    font-size: small;
 }
 
 a {
     color: white;
     margin: 0;
-    justify-content: right;
-    align-items: right;
+    font-size: small;
 }
