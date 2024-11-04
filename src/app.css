@@ -77,3 +77,7 @@ a {
     color: white;
     margin: 0;
 }
+
+.text-reset {
+    justify-content: right;
+}
