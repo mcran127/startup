@@ -60,9 +60,6 @@ main {
 }
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0.5 em;
     position: fixed;
     left: 0;
@@ -70,3 +67,8 @@ footer {
     bottom: 0;
   }
   
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
