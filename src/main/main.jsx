@@ -1,4 +1,5 @@
 import React from 'react';
+import './scores.css';
 
 export function Main() {
   return (
