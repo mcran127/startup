@@ -63,11 +63,10 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #222222;
-    color: white;
-    padding: 0.5em;
+    padding: 0.5 em;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    position: fixed;
-}
+  }
+  
