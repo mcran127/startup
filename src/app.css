@@ -61,6 +61,7 @@ main {
 
 footer {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: #222222;
@@ -72,10 +73,12 @@ span {
     color: white;
     margin: 0; 
     justify-content: left;
+    align-items: left;
 }
 
 a {
     color: white;
     margin: 0;
     justify-content: right;
+    align-items: right;
 }
