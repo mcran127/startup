@@ -68,16 +68,6 @@ footer {
     padding: 0.5em;
     left: 0;
     right: 0;
-}
-
-span {
-    color: white;
-    margin: 0; 
-    font-size: small;
-}
-
-a {
-    color: white;
-    margin: 0;
-    font-size: small;
+    bottom: 0;
+    position: fixed;
 }
