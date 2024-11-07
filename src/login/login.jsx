@@ -1,6 +1,12 @@
 import React from 'react';
 
 export function Login() {
+
+    async function createUser() {
+        localStorage.setItem('userName', userName);
+        props.onLogin(userName);
+      }
+      
   return (
     <main className='container-fluid bg-secondary text-center'>
         <h1>Welcome to Pokemon Team Builder</h1>
