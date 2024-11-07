@@ -63,7 +63,7 @@ function App() {
 
         <footer className='bg-dark text-white-50'>
           <div className='container-fluid'>
-            <span className='text-reset'>Matthew Crandall(s)</span>
+            <span className='text-reset'>Matthew Crandall</span>
             <a className='text-reset' href='https://github.com/mcran127/startup'>
               Source
             </a>

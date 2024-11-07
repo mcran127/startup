@@ -8,14 +8,14 @@ export function Login() {
         <form method="get" action="main">
             <div>
                 <span>Username</span>
-                <input type="text" placeholder="John Smith"></input>
+                <input type="email" placeholder="John Smith"></input>
             </div>
             <div>
                 <span>Password</span>
                 <input type="password" placeholder="password"></input>
             </div>
             <div>
-                <button type="submit">Login</button>
+                <button type="submit" onClick={() => createUser()} disabled={!userName || !password}>Login</button>
             </div>
         </form>
     </main>
