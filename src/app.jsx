@@ -5,8 +5,13 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
 import { Main } from './main/main';
 import { Builder } from './builder/builder';
+import { AuthState } from './login/authState';
 
-export default function App() {
+function App() {
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+  const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+  const [authState, setAuthState] = React.useState(currentAuthState);
+
   return (
     <BrowserRouter>
       <body className='body bg-dark text-light'>
@@ -18,22 +23,39 @@ export default function App() {
                   Login
                 </NavLink>
               </li>
+              {authState === AuthState.Authenticated && (
               <li className='nav-item'>
                 <NavLink className='nav-link' to='Main'>
                   Main
                 </NavLink>
               </li>
+              )}
+              {authState === AuthState.Authenticated && (
               <li className='nav-item'>
                 <NavLink className='nav-link' to='Builder'>
                   Builder
                 </NavLink>
               </li>
+            )}
             </menu>
           </nav>
         </header>
 
         <Routes>
-          <Route path='/' element={<Login />} exact />
+        <Route
+            path='/'
+            element={
+              <Login
+                userName={userName}
+                authState={authState}
+                onAuthChange={(userName, authState) => {
+                  setAuthState(authState);
+                  setUserName(userName);
+                }}
+              />
+            }
+            exact
+          />
           <Route path='/main' element={<Main />} />
           <Route path='/builder' element={<Builder />} />
           <Route path='*' element={<NotFound />} />
@@ -55,3 +77,5 @@ export default function App() {
 function NotFound() {
   return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
 }
+
+export default App;
