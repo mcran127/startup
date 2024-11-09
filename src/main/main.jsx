@@ -63,39 +63,34 @@ export function Main() {
       </h1>
       <section>
           <table>
-          <thead>
-                        <tr>
-                            {rows[0]?.map((deck, index) => (
-                                <th key={index}>{`${deck.title} by ${deck.name}`}</th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
+          <tbody>
+                        {/* First set of rows: Titles of Decks 1-4 and 5-8 */}
                         {rows.map((row, rowIndex) => (
-                            <tr key={rowIndex}>
-                                {/* Render Titles for each row */}
-                                {row.map((deck, index) => (
-                                    <th key={`title-${rowIndex}-${index}`}>
-                                        {`${deck.title} by ${deck.name}`}
-                                    </th>
-                                ))}
-                            </tr>
+                            <React.Fragment key={rowIndex}>
+                                {/* Titles Row */}
+                                <tr>
+                                    {row.map((deck, index) => (
+                                        <th key={`title-${rowIndex}-${index}`}>
+                                            {`${deck.title} by ${deck.name}`}
+                                        </th>
+                                    ))}
+                                </tr>
+
+                                {/* Images Row */}
+                                <tr>
+                                    {row.map((deck, index) => (
+                                        <td key={`image-${rowIndex}-${index}`}>
+                                            <img
+                                                src={deck.imageUrl}
+                                                alt={deck.title}
+                                                height={200}
+                                                width={300}
+                                            />
+                                        </td>
+                                    ))}
+                                </tr>
+                            </React.Fragment>
                         ))}
-                        <tr>
-                            {/* Render Images for each row */}
-                            {rows.map((row, rowIndex) => (
-                                row.map((deck, index) => (
-                                    <td key={`image-${rowIndex}-${index}`}>
-                                        <img
-                                            src={deck.imageUrl}
-                                            alt={deck.title}
-                                            height={200}
-                                            width={300}
-                                        />
-                                    </td>
-                                ))
-                            ))}
-                        </tr>
                     </tbody>
             </table>
       </section>
