@@ -48,7 +48,7 @@ export function Main() {
 
     const rows = [];
     for (let i = 0; i < decks.length; i += 4) {
-        rows.push(decks.slice(i, i + 4)); // Create each row of 4 decks
+        rows.push(decks.slice(i, i + 4));
     }
 
   return (
@@ -63,7 +63,6 @@ export function Main() {
       </h1>
       <section>
           <table>
-              {/* Table header (titles and names) */}
             <thead>
                 <tr>
                 {rows[0]?.map((deck, index) => (
@@ -71,7 +70,6 @@ export function Main() {
                 ))}
                 </tr>
             </thead>
-            {/* Table body (images) */}
             <tbody>
                 {rows.map((row, rowIndex) => (
                 <tr key={rowIndex}>

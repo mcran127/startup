@@ -44,31 +44,37 @@ section {
     display: flex;
     height: 100%;
     width: 100%;
+    justify-content: center;
 }
+
 
 table {
     width: 100%;
-    flex-direction: row;
+    border-collapse: collapse;  /* Makes table borders collapse */
 }
 
-tr {
-    flex-direction: row;
-}
-
-#names {
-    flex: .3;
+thead th {
     text-align: center;
-    margin: 2px;
+    font-weight: bold;
+    padding: 10px;
 }
 
-#images {
-    flex: .7;
-    margin: 2px;
-}
-
-td {
+tbody td {
     text-align: center;
-    vertical-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+td img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 200px;
+}
+
+#names, #images {
+    text-align: center;
+    padding: 5px;
 }
 
 footer {
