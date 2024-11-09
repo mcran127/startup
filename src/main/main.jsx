@@ -83,12 +83,7 @@ export function Main() {
                 <tr>
                   {row.map((deck, index) => (
                     <td key={`image-${rowIndex}-${index}`}>
-                      <img
-                        src={deck.imageUrl}
-                        alt={deck.title}
-                        height={200}
-                        width={300}
-                      />
+                      <img src={deck.imageUrl} alt={deck.title} height={200} width={300}/>
                     </td>
                   ))}
                 </tr>
