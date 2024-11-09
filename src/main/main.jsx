@@ -5,43 +5,43 @@ export function Main() {
 
     const [decks, setDecks] = useState([
         {
-          title: "TITLE by NAME",
-          name: "Deck 1 Name",
+          title: "TITLE",
+          name: "NAME",
           imageUrl: "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755"
         },
         {
-          title: "TITLE by NAME",
-          name: "Deck 2 Name",
+          title: "TITLE",
+          name: "NAME",
           imageUrl: "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755"
         },
         {
-          title: "TITLE by NAME",
-          name: "Deck 3 Name",
+          title: "TITLE",
+          name: "NAME",
           imageUrl: "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755"
         },
         {
-          title: "TITLE by NAME",
-          name: "Deck 4 Name",
+          title: "TITLE",
+          name: "NAME",
           imageUrl: "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755"
         },
         {
-          title: "TITLE by NAME",
-          name: "Deck 5 Name",
+          title: "TITLE",
+          name: "NAME",
           imageUrl: "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755"
         },
         {
-          title: "TITLE by NAME",
-          name: "Deck 6 Name",
+          title: "TITLE",
+          name: "NAME",
           imageUrl: "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755"
         },
         {
-          title: "TITLE by NAME",
-          name: "Deck 7 Name",
+          title: "TITLE",
+          name: "NAME",
           imageUrl: "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755"
         },
         {
-          title: "TITLE by NAME",
-          name: "Deck 8 Name",
+          title: "TITLE",
+          name: "NAME",
           imageUrl: "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755"
         },
       ]);
