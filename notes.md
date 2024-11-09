@@ -270,3 +270,7 @@ updateState is asynchronus. Might not happen immediately.
 
 Hooks can do what class style components can do and more. We've seen useState, but theres also useEffect when completes rendering,
 or when cleanup used. Hook dependancies for useEffect is an array in the second parameter. If empty, will only call when first rendered.
+
+## React Deliverable
+
+Worked on adding functionality to code, didnt attempt a logout yet but might later. Main for now is mostly the same, will be updated from submissions. Builder is heavily changed to set current pokemon and display stats nicely

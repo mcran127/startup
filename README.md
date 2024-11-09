@@ -19,3 +19,13 @@ For this deliverable, I used CSS to style the webpage
 *Images are still primarily placeholders
 *HTMl was adjusted in order to properly create head section
 *Naviagtion is limited to the buttons so there's no naviagation section
+
+## React Deliverable
+
+For this deliverable, I transfered my previous html files into a javascript/jsx format to make it all one page and simulat more of how the website acts
+*Bundled and transpiled code
+*login uses authstate to enter although no logout, perhaps to be added later
+*Main displays the same but have been prepared to update when things are added
+*Builder changed the most, having the search bar prepared to add stuff to the team, currently selected pokemon has picture and stats shown, and stats are represented by a progress bar element
+*Still able to move between components through buttons and now a sidebar.
+*Hooks allow various states like currPokemon to be updated
