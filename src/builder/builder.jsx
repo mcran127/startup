@@ -79,43 +79,44 @@ export function Builder() {
                     <img src={selectedPokemon.image} alt={selectedPokemon.name}></img>
                 </div>
                 <table id="stats">
-                    <tr>
-                        <td>
-                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.hp) }}></div>
-                        </td>
-                        <td>
-                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.attack) }}></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{selectedPokemon.stats.hp}</td>
-                        <td>{selectedPokemon.stats.attack}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.defense) }}></div>
-                        </td>
-                        <td>
-                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.specialAttack) }}></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{selectedPokemon.stats.defense}</td>
-                        <td>{selectedPokemon.stats.specialAttack}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.specialDefense) }}></div>
-                        </td>
-                        <td>
-                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.speed) }}></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{selectedPokemon.stats.specialDefense}</td>
-                        <td>{selectedPokemon.stats.speed}</td>
-                    </tr>
-                </table>
+    <tr>
+        <td>
+            <div className={`stat-bar ${getStatBarClass(selectedPokemon.stats.hp)}`} style={{ width: getStatWidth(selectedPokemon.stats.hp) }}></div>
+        </td>
+        <td>
+            <div className={`stat-bar ${getStatBarClass(selectedPokemon.stats.attack)}`} style={{ width: getStatWidth(selectedPokemon.stats.attack) }}></div>
+        </td>
+    </tr>
+    <tr>
+        <td>{selectedPokemon.stats.hp}</td>
+        <td>{selectedPokemon.stats.attack}</td>
+    </tr>
+    <tr>
+        <td>
+            <div className={`stat-bar ${getStatBarClass(selectedPokemon.stats.defense)}`} style={{ width: getStatWidth(selectedPokemon.stats.defense) }}></div>
+        </td>
+        <td>
+            <div className={`stat-bar ${getStatBarClass(selectedPokemon.stats.specialAttack)}`} style={{ width: getStatWidth(selectedPokemon.stats.specialAttack) }}></div>
+        </td>
+    </tr>
+    <tr>
+        <td>{selectedPokemon.stats.defense}</td>
+        <td>{selectedPokemon.stats.specialAttack}</td>
+    </tr>
+    <tr>
+        <td>
+            <div className={`stat-bar ${getStatBarClass(selectedPokemon.stats.specialDefense)}`} style={{ width: getStatWidth(selectedPokemon.stats.specialDefense) }}></div>
+        </td>
+        <td>
+            <div className={`stat-bar ${getStatBarClass(selectedPokemon.stats.speed)}`} style={{ width: getStatWidth(selectedPokemon.stats.speed) }}></div>
+        </td>
+    </tr>
+    <tr>
+        <td>{selectedPokemon.stats.specialDefense}</td>
+        <td>{selectedPokemon.stats.speed}</td>
+    </tr>
+</table>
+
             </div>
         </div>
         <div id="SubmitButton">
