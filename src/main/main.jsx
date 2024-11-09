@@ -63,29 +63,40 @@ export function Main() {
       </h1>
       <section>
           <table>
-            <thead>
-                <tr>
-                {rows[0]?.map((deck, index) => (
-                    <th key={index}>{`${deck.title} by ${deck.name}`}</th>
-                ))}
-                </tr>
-            </thead>
-            <tbody>
-                {rows.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                    {row.map((deck, index) => (
-                    <td key={index}>
-                        <img
-                        src={deck.imageUrl}
-                        alt={deck.title}
-                        height={200}
-                        width={300}
-                        />
-                    </td>
-                    ))}
-                </tr>
-                ))}
-            </tbody>
+          <thead>
+                        <tr>
+                            {rows[0]?.map((deck, index) => (
+                                <th key={index}>{`${deck.title} by ${deck.name}`}</th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {rows.map((row, rowIndex) => (
+                            <tr key={rowIndex}>
+                                {/* Render Titles for each row */}
+                                {row.map((deck, index) => (
+                                    <th key={`title-${rowIndex}-${index}`}>
+                                        {`${deck.title} by ${deck.name}`}
+                                    </th>
+                                ))}
+                            </tr>
+                        ))}
+                        <tr>
+                            {/* Render Images for each row */}
+                            {rows.map((row, rowIndex) => (
+                                row.map((deck, index) => (
+                                    <td key={`image-${rowIndex}-${index}`}>
+                                        <img
+                                            src={deck.imageUrl}
+                                            alt={deck.title}
+                                            height={200}
+                                            width={300}
+                                        />
+                                    </td>
+                                ))
+                            ))}
+                        </tr>
+                    </tbody>
             </table>
       </section>
     </main>
