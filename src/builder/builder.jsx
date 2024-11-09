@@ -44,33 +44,31 @@ export function Builder() {
   return (
     <main className='container-fluid bg-secondary text-center'>
       <h1>Choose Your Pokemon</h1>
-        <table>
-            <tbody>
-            <tr>
-                {filteredPokemon.map((pokemon, index) => (
-                <td key={index} onClick={() => handlePokemonSelect(pokemon)}>
-                    <img src={pokemon.image} alt={pokemon.name} />
-                </td>
-                ))}
-            </tr>
-            <tr>
-                {filteredPokemon.map((pokemon, index) => (
-                <td key={index}>{pokemon.name}</td>
-                ))}
-            </tr>
-            </tbody>
-        </table>
+      <table>
+                <tbody>
+                    <tr>
+                        {pokemonList.map((pokemon, index) => (
+                            <td key={index} onClick={() => handlePokemonSelect(pokemon)}>
+                                <img src={pokemon.image} alt={pokemon.name} />
+                            </td>
+                        ))}
+                    </tr>
+                    <tr>
+                        {pokemonList.map((pokemon, index) => (
+                            <td key={index}>{pokemon.name}</td>
+                        ))}
+                    </tr>
+                </tbody>
+            </table>
         
         <div className="search">
-            <form action="#">
-                <input type="text" placeholder="Search Pokemon"
-                    name="search" value = {searchTerm} onChange={handleSearchChange}>
-                </input>
-                <button>
-                <i class="fa fa-search">Search</i>
-                </button>
-            </form>
-        </div>
+                <form action="#">
+                    <input type="text" placeholder="Search Pokemon" name="search" value={searchTerm} onChange={handleSearchChange}/>
+                    <button>
+                        <i className="fa fa-search">Search</i>
+                    </button>
+                </form>
+            </div>
 
         <div>
             <h2>Stats of Pokemon</h2>
