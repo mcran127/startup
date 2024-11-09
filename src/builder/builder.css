@@ -73,6 +73,25 @@ img {
     flex: .5;
 }
 
+.stat-bar {
+    height: 20px;
+    border-radius: 5px;
+    background-color: #007bff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.stat-bar-low {
+    background-color: #ff6666; /* Red for low stats */
+}
+
+.stat-bar-medium {
+    background-color: #ffcc00; /* Yellow for medium stats */
+}
+
+.stat-bar-high {
+    background-color: #28a745; /* Green for high stats */
+}
+
 
 #SubmitButton {
     text-align: center;

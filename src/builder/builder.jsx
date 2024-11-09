@@ -31,6 +31,16 @@ export function Builder() {
         return `${stat}%`;
       };
 
+      const getStatBarClass = (stat) => {
+        if (stat <= 45) {
+            return 'stat-bar-low';
+        } else if (stat <= 70) {
+            return 'stat-bar-medium';
+        } else {
+            return 'stat-bar-high';
+        }
+    };
+
   return (
     <main className='container-fluid bg-secondary text-center'>
       <h1>Choose Your Pokemon</h1>
