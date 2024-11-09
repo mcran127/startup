@@ -27,6 +27,10 @@ export function Builder() {
         setSelectedPokemon(pokemon);
     };
 
+    const getStatWidth = (stat) => {
+        return `${stat}%`;
+      };
+
   return (
     <main className='container-fluid bg-secondary text-center'>
       <h1>Choose Your Pokemon</h1>
@@ -66,24 +70,36 @@ export function Builder() {
                 </div>
                 <table id="stats">
                     <tr>
-                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJ1e0DJuvhm69F3mOg4NpsS4Y4x4A0QI-Hg&s" alt=""></img></td>
-                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJ1e0DJuvhm69F3mOg4NpsS4Y4x4A0QI-Hg&s" alt=""></img></td>
+                        <td>
+                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.hp) }}></div>
+                        </td>
+                        <td>
+                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.attack) }}></div>
+                        </td>
                     </tr>
                     <tr>
                         <td>{selectedPokemon.stats.hp}</td>
                         <td>{selectedPokemon.stats.attack}</td>
                     </tr>
                     <tr>
-                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJ1e0DJuvhm69F3mOg4NpsS4Y4x4A0QI-Hg&s" alt=""></img></td>
-                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJ1e0DJuvhm69F3mOg4NpsS4Y4x4A0QI-Hg&s" alt=""></img></td>
+                        <td>
+                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.defense) }}></div>
+                        </td>
+                        <td>
+                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.specialAttack) }}></div>
+                        </td>
                     </tr>
                     <tr>
                         <td>{selectedPokemon.stats.defense}</td>
                         <td>{selectedPokemon.stats.specialAttack}</td>
                     </tr>
                     <tr>
-                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJ1e0DJuvhm69F3mOg4NpsS4Y4x4A0QI-Hg&s" alt=""></img></td>
-                        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJ1e0DJuvhm69F3mOg4NpsS4Y4x4A0QI-Hg&s" alt=""></img></td>
+                        <td>
+                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.specialDefense) }}></div>
+                        </td>
+                        <td>
+                            <div className="stat-bar" style={{ width: getStatWidth(selectedPokemon.stats.speed) }}></div>
+                        </td>
                     </tr>
                     <tr>
                         <td>{selectedPokemon.stats.specialDefense}</td>
