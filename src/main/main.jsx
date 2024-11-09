@@ -71,10 +71,8 @@ export function Main() {
       <section>
         <table>
           <tbody>
-            {/* First set of rows: Titles of Decks 1-4 and 5-8 */}
             {rows.map((row, rowIndex) => (
               <React.Fragment key={rowIndex}>
-                {/* Titles Row */}
                 <tr>
                   {row.map((deck, index) => (
                     <th key={`title-${rowIndex}-${index}`}>
@@ -82,8 +80,6 @@ export function Main() {
                     </th>
                   ))}
                 </tr>
-
-                {/* Images Row */}
                 <tr>
                   {row.map((deck, index) => (
                     <td key={`image-${rowIndex}-${index}`}>
