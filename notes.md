@@ -271,6 +271,66 @@ updateState is asynchronus. Might not happen immediately.
 Hooks can do what class style components can do and more. We've seen useState, but theres also useEffect when completes rendering,
 or when cleanup used. Hook dependancies for useEffect is an array in the second parameter. If empty, will only call when first rendered.
 
-## React Deliverable
+## React Startup
 
 Worked on adding functionality to code, didnt attempt a logout yet but might later. Main for now is mostly the same, will be updated from submissions. Builder is heavily changed to set current pokemon and display stats nicely
+
+# HTTP Services
+
+## Fetch
+
+For computers to talk they need an IP address but humans want domain names converted through DNS. You can use dig (domain) to find its IP address. First goes across network until connectio discovered and established. Traceroutes follow from home router to address, since dynamic, might be different every time. Internals using TCP/IP model, layered architecture with application layer (HTTP, SMTP, FTP, SSH, IRC), transport layer which sends data through chunks, then internet layer which maintains connection, then link layer which is hardware.
+
+Monolithic web servers, server and software since only web service software on the server, only static html files. Most languages include libraries which make connections and use HTTP. We use Caddy. Microservices are web services that provide only 1 service and are meant to be independant. Serverless removed from architecture.
+
+Domain names are just strings following a convention. Root then subdomains. Root is top level domain such as com while secondary level is like byu. Can use whois to get domain name info. DNS is domain name system, big registry. Mapping by addres and canonical name (A and CNAME). Cname like byu.com to byu.edu. TTL/time to live setting for domain records, clears cache after that time. Can lease/extend lease
+
+Application starts with browser requesting index.html which references everything else using HTTPS. Then JS allows us to request external services and inject into DOM. Supply URL using fetch function. Now implementing backend using endpoints or APIs. Not only requests static files but also things like get make user and high score. Both front and backend can fetch.
+
+URL, uniform resource locator, represent location of web resource. Only need scheme (HTTPS) and domain name (byu.edu) but can also add port, path, parameters, and anchor.
+<scheme>://<domain name>:<port>/<path>?<parameters>#<anchor>
+URN and URI name and identifier, doesnt specift location info, and URI is URL or URN
+
+Ports are needed along with IP address. Supports multiple protocols on one device. Up to 1023 is standard protocols, then 49151 are to certain entities, then 65535 are dynamic. 20 is file transfer protocol, 22 is SSH, 25 is SMTP/mail, 53 is DNS lookup, 80 is HTTP for web requests, 110 is POP3 of email, NTP is 123 for time, 161 is SSNMP for routers/printers/etc. 194 is IRC chatting, and 443 is HTTPS. Be consistent as they cannot overlap. Simon is 3000 and startup is 4000.
+
+HTTP is how the web talks, when making a request. 
+<verb> <url path, parameters, anchor> <version>
+[<header key: value>]*
+[
+
+  <body>
+]
+Response
+<version> <status code> <status string>
+[<header key: value>]*
+[
+
+  <body>
+]
+Verbs include GET, POST (create new), PUT (update a resource, body must contain resource), DELETE, OPTIONS, get metadata, usually only headers returned. Status code 100s info, 200s success, 300s redirect, 400 client error/invalid, 500 server errors. 100 continue, 200 success, 201 ccreated, 204 no content(nothing returned), 304 not modified (cached is still valid), 307 permanent redirect, 308 temporary redirect, 400 bad request, 401 unauthorized, 403 forbiddem, 404 not found, 408 timeout, 409 conflict (out of date), 418 teapot, 429 too many requests from client, 500 internal server error, 503 service unavailable
+Headers include authorization, accept (images, text, etc.), Content type/formatting, host, cookie, origin, access control allow origin, content length, cache control, user agent. Body can be files, json, images, etc. Based on what is accept(ed). Cookies help remember what's needed.
+
+Fetch allows HTTP requests from JS. Takes a url, returns a promise. Defaults to GET. 
+fetch('https://quote.cs260.click')
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+You can also populate options parameter with method and headers
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'test title',
+    body: 'test body',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+
+## Express
+
+Node Web Service can create HTTP server using createServer, takes a request and response. Then server.listen on whatever port until terminated. Kill using ctrl-c.
+
+## Service Startup
