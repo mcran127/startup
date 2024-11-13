@@ -341,3 +341,14 @@ middleware looks similar to routing the difference but routing need matching pat
 function parameters are HTTP req, HTTP res, and next passes on.
 
 ## Service Startup
+
+To debug 502, ssh in, check index.js and other files. Then if changed, run pm2 restart simon/startup. you can also run node index.js.
+also use pm2 describe startup/simon.
+
+SOP is same origin policy where JS can only request to a domain if the name matches. However, we also want CORS, cross origin resource sharing,
+which can decide what origins are and aren't allowed. CORS only alerts so hackers could proxy. Uses Access-Control-Allow-Origin.
+
+Web services should be for the user. Divided into endpoints with a functional purpose. Often called an API. When designing, focus on readability, grammar,
+discover other things, compatibility, documentable, and simplicity. RPC or remote procedure calls expose endpoints as functions. Maps directly to function calls
+but might expose inner workings. REST is representative state transfer allowing for caching optimization. Get will always get the same thing until put.
+GraphQL focuses on data manip instead of function call or resource. Query that joins or filters. Such as get all orders filtering by date. Only 1 endpoint.
