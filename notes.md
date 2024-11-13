@@ -333,4 +333,11 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 
 Node Web Service can create HTTP server using createServer, takes a request and response. Then server.listen on whatever port until terminated. Kill using ctrl-c.
 
+Express does routing requests, HTTP with JSON body request manipulation, generating HTTP responses, using middleware for functionality
+Everything is around creating and using HTTP routing and middleware. get takes 2 parameters, URL patterna nd callback. Path matching parameter matches url
+Callback has 3 parameters, req, res, and next afterwards. Can also use post or delete. Can wildcard using *.
+Middleware design uses mediator and middleware. Med is loading middleware and order vs the functionality. Express is mediator.
+middleware looks similar to routing the difference but routing need matching pattern. Middleware always called unless doesnt call next using req res next
+function parameters are HTTP req, HTTP res, and next passes on.
+
 ## Service Startup
