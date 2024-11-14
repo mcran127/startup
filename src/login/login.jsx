@@ -12,25 +12,33 @@ export function Login(props) {
 
     async function createUser(event) {
         event.preventDefault();
+        console.log('Creating user:', userName, password); // Check if username and password are correct
+      
         const response = await fetch(`/api/auth/create`, {
-            method: 'POST',
-            body: JSON.stringify({ username: userName, password: password }),
-            headers: {
-              'Content-type': 'application/json; charset=UTF-8',
-            },
-          });
-          if (response?.status === 200) {
-            const data = await response.json();
-            localStorage.setItem('userName', userName);
-            localStorage.setItem('token', data.token);
-            props.onLogin(userName);
-            props.onAuthChange(userName, AuthState.Authenticated);
-            navigate('/Main');
-        } 
-          else {
-            console.error('Error creating user');
+          method: 'POST',
+          body: JSON.stringify({ username: userName, password: password }),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        });
+      
+        if (response.status === 200) {
+          const data = await response.json();
+          console.log('User created successfully', data); 
+          localStorage.setItem('userName', userName);
+          localStorage.setItem('token', data.token);
+          
+          props.onLogin(userName);
+          props.onAuthChange(userName, AuthState.Authenticated);
+          
+          console.log('Navigating to /main');
+          navigate('/main');
+        } else {
+          console.error('Error creating user, response status:', response.status);
+          alert('Error creating user');
         }
       }
+      
 
       async function loginUser(event) {
         event.preventDefault();
