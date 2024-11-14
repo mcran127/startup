@@ -92,6 +92,23 @@ export function Builder() {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+    fetch(`https://pokeapi.co/api/v2/pokemon/${event.target.value.toLowerCase()}`)
+    .then((response) => response.json())
+    .then((data) => {
+        const pokemonData = {
+          name: data.name,
+          image: data.sprites.front_default,
+          stats: {
+            hp: data.stats.base_stat[0],
+            attack: data.stats.base_stat[1],
+            defense: data.stats.base_stat[2],
+            specialAttack: data.stats.base_stat[3],
+            specialDefense: data.stats.base_stat[4],
+            speed: data.stats.base_stat[5],
+          },
+        };
+        setSelectedPokemon(pokemonData);
+    })
   };
 
   const handlePokemonSelect = (pokemon) => {
