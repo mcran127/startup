@@ -70,7 +70,7 @@ export function Login(props) {
     <main className='container-fluid bg-secondary text-center'>
         <h1>Welcome to Pokemon Team Builder</h1>
         <h2>Login Here</h2>
-        <form onSubmit={createUser}>
+        <form>
             <div>
                 <span>Username</span>
                 <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="John Smith"></input>
