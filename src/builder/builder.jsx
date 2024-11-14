@@ -4,18 +4,18 @@ import "./builder.css";
 export function Builder() {
   const [pokemonList] = useState([
     {
-      name: "Bulbasaur",
-      image:
-        "https://archives.bulbagarden.net/media/upload/thumb/f/fb/0001Bulbasaur.png/500px-0001Bulbasaur.png",
-      stats: {
-        hp: 45,
-        attack: 49,
-        defense: 49,
-        specialAttack: 65,
-        specialDefense: 65,
-        speed: 45,
+        name: "Choose your Pokemon",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/5/5a/Black_question_mark.png",
+        stats: {
+          hp: 0,
+          attack: 0,
+          defense: 0,
+          specialAttack: 0,
+          specialDefense: 0,
+          speed: 0,
+        },
       },
-    },
     {
       name: "Choose your Pokemon",
       image:
