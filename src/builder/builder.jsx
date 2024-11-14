@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./builder.css";
 
 export function Builder() {
-  const [pokemonList] = useState([
+  const [pokemonList, setPokemonList] = useState([
     {
         name: "Choose your Pokemon",
         image:
@@ -113,6 +113,11 @@ export function Builder() {
           },
         };
         setSelectedPokemon(pokemonData);
+        setPokemonList((prevList) => {
+            return prevList.map((pokemon) =>
+              pokemon.name === "Choose your Pokemon" ? pokemonData : pokemon
+            );
+          });
       })
   };
 
@@ -159,8 +164,8 @@ export function Builder() {
             value={searchTerm}
             onChange={handleSearchChange}
           />
-          <button>
-            <i className="fa fa-search" onClick={handleSearchClick}>Search</i>
+          <button onClick={handleSearchClick}>
+            <i className="fa fa-search">Search</i>
           </button>
         </form>
       </div>
