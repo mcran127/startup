@@ -6,6 +6,17 @@ export function Login(props) {
     const [userName, setUserName] = React.useState(props.userName);
     const [password, setPassword] = React.useState('');
 
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            localStorage.removeItem('userName');
+            localStorage.removeItem('token');
+            props.onAuthChange('', AuthState.Unauthenticated);
+        };
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, []);
+    
     async function createUser() {
         const response = await fetch(`/api/auth/create`, {
             method: 'post',
