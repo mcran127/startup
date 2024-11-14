@@ -17,9 +17,10 @@ export function Login(props) {
         };
     }, [props]);
 
-    async function createUser() {
+    async function createUser(event) {
+        event.preventDefault();
         const response = await fetch(`/api/auth/create`, {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({ username: userName, password: password }),
             headers: {
               'Content-type': 'application/json; charset=UTF-8',
