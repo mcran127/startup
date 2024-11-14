@@ -16,14 +16,35 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-apiRouter.post('/auth/create', async (req, res) => {
-    const user = users[req.body.username];
-    if (user) {
-      res.status(409).send({ msg: 'Existing user' });
-    } else {
-      const user = { username: req.body.username, password: req.body.password, token: uuid.v4() };
-      users[user.username] = user;
+apiRouter.post('/auth/login', (req, res) => {
+    const { username, password } = req.body;
+    const user = users[username];
   
+    if (user && user.password === password) {
       res.send({ token: user.token });
+    } else {
+      res.status(401).send({ msg: 'Invalid credentials' });
     }
   });
+  
+
+  apiRouter.post('/auth/create', async (req, res) => {
+    const existingUser = users[req.body.username];
+    if (existingUser) {
+      res.status(409).send({ msg: 'Existing user' });
+    } else {
+      const newUser = { username: req.body.username, password: req.body.password, token: uuid.v4() };
+      users[newUser.username] = newUser;
+    
+      res.send({ token: newUser.token });
+    }
+  });
+  
+
+apiRouter.delete('/auth/logout', (req, res) => {
+    const user = Object.values(users).find((u) => u.token === req.body.token);
+    if (user) {
+      delete user.token;
+    }
+    res.status(204).end();
+});

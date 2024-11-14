@@ -40,6 +40,29 @@ export function Login(props) {
         }
       }
 
+      async function loginUser(event) {
+        event.preventDefault();
+        const response = await fetch(`/api/auth/login`, {
+            method: 'POST',
+            body: JSON.stringify({ username: userName, password: password }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+        });
+    
+        if (response?.status === 200) {
+            const data = await response.json();
+            localStorage.setItem('userName', userName);
+            localStorage.setItem('token', data.token);
+            props.onLogin(userName);
+            props.onAuthChange(userName, AuthState.Authenticated);
+        } else {
+            console.error('Login failed');
+            alert('Login failed: Invalid credentials');
+        }
+    }
+    
+
   return (
     <main className='container-fluid bg-secondary text-center'>
         <h1>Welcome to Pokemon Team Builder</h1>
@@ -54,7 +77,10 @@ export function Login(props) {
                 <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="password"></input>
             </div>
             <div>
-                <button type="submit" disabled={!userName || !password}>Login</button>
+                <button type="button" onClick={loginUser} disabled={!userName || !password}>Login</button>
+            </div>
+            <div>
+                <button type="button" onClick={createUser} disabled={!userName || !password}>Create User</button>
             </div>
         </form>
     </main>

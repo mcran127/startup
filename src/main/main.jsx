@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import "./main.css";
 
 export function Main() {
+
+  function logout() {
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    })
+      .then(() => {
+        localStorage.removeItem('userName');
+        props.onLogout();
+      });
+  }
+
   const [decks, setDecks] = useState([
     {
       title: "TITLE",
@@ -63,6 +74,9 @@ export function Main() {
       <h1>
         <span>
           <div>Latest Decks</div>
+          <Button onClick={() => logout()}>
+            Logout
+          </Button>
           <a href="builder" id="newDeck">
             <button type="button">New Deck</button>
           </a>
