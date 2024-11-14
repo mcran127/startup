@@ -34,11 +34,13 @@ export function Login(props) {
             },
           });
           if (response?.status === 200) {
+            const data = await response.json();
             localStorage.setItem('userName', userName);
+            localStorage.setItem('token', data.token);
             props.onLogin(userName);
             props.onAuthChange(userName, AuthState.Authenticated);
-            navigate('/main')
-          }
+            navigate('/main');
+        } 
           else {
             console.error('Error creating user');
         }
