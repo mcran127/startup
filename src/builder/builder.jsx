@@ -94,11 +94,9 @@ export function Builder() {
     setSearchTerm(event.target.value);
   };
 
-  const handleSearchClick = () => {
-    // Only perform the fetch if search term is not empty
-    if (searchTerm.trim() === "") return;
+  const handleSearchClick = (event) => {
+    event.preventDefault();
 
-    // Fetch the Pokemon data using the PokeAPI
     fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`)
       .then((response) => response.json())
       .then((data) => {
