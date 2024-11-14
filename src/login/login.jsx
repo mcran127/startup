@@ -9,7 +9,7 @@ export function Login(props) {
     async function createUser() {
         const response = await fetch(`/api/auth/create`, {
             method: 'post',
-            body: JSON.stringify({ email: userName, password: password }),
+            body: JSON.stringify({ username: userName, password: password }),
             headers: {
               'Content-type': 'application/json; charset=UTF-8',
             },
@@ -17,16 +17,18 @@ export function Login(props) {
           if (response?.status === 200) {
             localStorage.setItem('userName', userName);
             props.onLogin(userName);
-            localStorage.setItem('userName', userName);
             props.onAuthChange(userName, AuthState.Authenticated);
           }
+          else {
+            console.error('Error creating user');
+        }
       }
 
   return (
     <main className='container-fluid bg-secondary text-center'>
         <h1>Welcome to Pokemon Team Builder</h1>
         <h2>Login Here</h2>
-        <form method="get" action="main" onSubmit={createUser}>
+        <form method="post" action="main" onSubmit={createUser}>
             <div>
                 <span>Username</span>
                 <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="John Smith"></input>

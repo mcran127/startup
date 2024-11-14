@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const uuid = require('uuid');
 
-let MainList = {}
+let users = {};
+let MainList = {};
 
 app.use(express.json());
 
@@ -20,7 +21,7 @@ apiRouter.post('/auth/create', async (req, res) => {
     if (user) {
       res.status(409).send({ msg: 'Existing user' });
     } else {
-      const user = { email: req.body.username, password: req.body.password, token: uuid.v4() };
+      const user = { username: req.body.username, password: req.body.password, token: uuid.v4() };
       users[user.username] = user;
   
       res.send({ token: user.token });
