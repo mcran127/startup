@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AuthState } from './authState';
 import { useNavigate } from 'react-router-dom';
+import { response } from 'express';
 
 
 export function Login(props) {
@@ -35,6 +36,8 @@ export function Login(props) {
           navigate('/main');
         } else {
           console.error('Error creating user, response status:', response.status);
+          const response = await response.json();
+          console.error(response);
           alert('Error creating user');
         }
       }
