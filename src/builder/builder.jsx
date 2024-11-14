@@ -113,6 +113,14 @@ export function Builder() {
           },
         };
         setSelectedPokemon(pokemonData);
+        const updatedPokemonList = [...pokemonList];
+        const selectedIndex = pokemonList.findIndex(
+          (pokemon) => pokemon.name === "Choose your Pokemon"
+        );
+        if (selectedIndex !== -1) {
+          updatedPokemonList[selectedIndex] = pokemonData;
+          setPokemonList(updatedPokemonList);
+        }
       })
   };
 
