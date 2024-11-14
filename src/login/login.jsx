@@ -12,7 +12,7 @@ export function Login(props) {
 
     async function createUser(event) {
         event.preventDefault();
-        console.log('Creating user:', userName, password); 
+        console.log('Creating user:', userName, password);
       
         const response = await fetch(`/api/auth/create`, {
           method: 'POST',
