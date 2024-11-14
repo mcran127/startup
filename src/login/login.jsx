@@ -7,8 +7,19 @@ export function Login(props) {
     const [password, setPassword] = React.useState('');
 
     async function createUser() {
-        localStorage.setItem('userName', userName);
-        props.onAuthChange(userName, AuthState.Authenticated);
+        const response = await fetch(`/api/auth/create`, {
+            method: 'post',
+            body: JSON.stringify({ email: userName, password: password }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          });
+          if (response?.status === 200) {
+            localStorage.setItem('userName', userName);
+            props.onLogin(userName);
+            localStorage.setItem('userName', userName);
+            props.onAuthChange(userName, AuthState.Authenticated);
+          }
       }
 
   return (
