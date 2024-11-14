@@ -32,7 +32,6 @@ apiRouter.post('/auth/login', (req, res) => {
 
   apiRouter.post('/auth/create', async (req, res) => {
     const existingUser = users[req.body.username];
-    console.log(existingUser);
     if (existingUser) {
       res.status(409).send({ msg: 'Existing user' });
     } else {

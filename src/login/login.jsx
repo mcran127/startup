@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AuthState } from './authState';
 import { useNavigate } from 'react-router-dom';
-import { response } from 'express';
 
 
 export function Login(props) {
@@ -13,7 +12,7 @@ export function Login(props) {
 
     async function createUser(event) {
         event.preventDefault();
-        console.log('Creating user:', userName, password);
+        console.log('Creating user:', userName, password); 
       
         const response = await fetch(`/api/auth/create`, {
           method: 'POST',
