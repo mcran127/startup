@@ -152,10 +152,9 @@ export function Builder() {
             placeholder="Search Pokemon"
             name="search"
             value={searchTerm}
-            onChange={handleSearchChange}
           />
           <button>
-            <i className="fa fa-search">Search</i>
+            <i className="fa fa-search" onClick={handleSearchChange}>Search</i>
           </button>
         </form>
       </div>
