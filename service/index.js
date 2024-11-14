@@ -10,7 +10,7 @@ app.use(express.json());
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
