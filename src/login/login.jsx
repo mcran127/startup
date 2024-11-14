@@ -8,20 +8,6 @@ export function Login(props) {
     const [userName, setUserName] = React.useState(props.userName);
     const [password, setPassword] = React.useState('');
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const handleBeforeUnload = () => {
-            localStorage.removeItem('userName');
-            localStorage.removeItem('token');
-            props.onAuthChange('', AuthState.Unauthenticated);
-        };
-    
-        window.addEventListener('beforeunload', handleBeforeUnload);
-    
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
-        };
-    }, [props]);
     
 
     async function createUser(event) {
