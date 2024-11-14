@@ -5,6 +5,7 @@ export function Login(props) {
 
     const [userName, setUserName] = React.useState(props.userName);
     const [password, setPassword] = React.useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleBeforeUnload = () => {
@@ -34,6 +35,7 @@ export function Login(props) {
             localStorage.setItem('userName', userName);
             props.onLogin(userName);
             props.onAuthChange(userName, AuthState.Authenticated);
+            navigate('/main')
           }
           else {
             console.error('Error creating user');
@@ -56,6 +58,7 @@ export function Login(props) {
             localStorage.setItem('token', data.token);
             props.onLogin(userName);
             props.onAuthChange(userName, AuthState.Authenticated);
+            navigate('/main')
         } else {
             console.error('Login failed');
             alert('Login failed: Invalid credentials');
