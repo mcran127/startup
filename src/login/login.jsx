@@ -36,8 +36,6 @@ export function Login(props) {
           navigate('/main');
         } else {
           console.error('Error creating user, response status:', response.status);
-          //const response = await response.json();
-          //console.error(response);
           alert('Error creating user');
         }
       }
