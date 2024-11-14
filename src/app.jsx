@@ -12,6 +12,13 @@ function App() {
   const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
   const [authState, setAuthState] = React.useState(currentAuthState);
 
+  function handleLogout() {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('token');
+    setUserName('');
+    setAuthState(AuthState.Unauthenticated);
+  }
+
   return (
     <BrowserRouter>
       <body className='body bg-dark text-light'>
