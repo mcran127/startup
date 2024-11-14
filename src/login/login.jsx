@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthState } from './authState';
 
 export function Login(props) {
@@ -15,8 +15,8 @@ export function Login(props) {
         return () => {
             window.removeEventListener('beforeunload', handleBeforeUnload);
         };
-    }, []);
-    
+    }, [props]);
+
     async function createUser() {
         const response = await fetch(`/api/auth/create`, {
             method: 'post',
