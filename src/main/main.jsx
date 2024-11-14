@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./main.css";
 
 export function Main() {
 
-  function logout() {
+  function logout(props) {
     fetch(`/api/auth/logout`, {
-      method: 'delete',
+      method: 'DELETE',
     })
       .then(() => {
         localStorage.removeItem('userName');
@@ -77,9 +78,9 @@ export function Main() {
           <Button onClick={() => logout()}>
             Logout
           </Button>
-          <a href="builder" id="newDeck">
+          <NavLink to="/builder" id="newDeck">
             <button type="button">New Deck</button>
-          </a>
+          </NavLink>
         </span>
       </h1>
       <section>
