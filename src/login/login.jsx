@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function Login(props) {
 
-    const [userName, setUserName] = React.useState(props.userName);
+    const [userName, setUserName] = React.useState(props.userName || '');
     const [password, setPassword] = React.useState('');
     const navigate = useNavigate();
     
@@ -25,7 +25,7 @@ export function Login(props) {
             localStorage.setItem('token', data.token);
             props.onLogin(userName);
             props.onAuthChange(userName, AuthState.Authenticated);
-            navigate('/main');
+            navigate('/Main');
         } 
           else {
             console.error('Error creating user');
