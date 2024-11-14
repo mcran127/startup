@@ -113,11 +113,6 @@ export function Builder() {
           },
         };
         setSelectedPokemon(pokemonData);
-        setPokemonList((prevList) => {
-            return prevList.map((pokemon) =>
-              pokemon.name === "Choose your Pokemon" ? pokemonData : pokemon
-            );
-          });
       })
   };
 
