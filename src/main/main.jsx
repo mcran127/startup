@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./main.css";
 
-export function Main() {
+export function Main(props) {
 
   function logout(props) {
     fetch(`/api/auth/logout`, {
@@ -75,9 +75,9 @@ export function Main() {
       <h1>
         <span>
           <div>Latest Decks</div>
-          <Button onClick={() => logout()}>
+          <button type="button" onClick={() => logout()}>
             Logout
-          </Button>
+          </button>
           <NavLink to="/builder" id="newDeck">
             <button type="button">New Deck</button>
           </NavLink>
