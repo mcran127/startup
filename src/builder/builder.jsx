@@ -92,9 +92,16 @@ export function Builder() {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    fetch(`https://pokeapi.co/api/v2/pokemon/${event.target.value.toLowerCase()}`)
-    .then((response) => response.json())
-    .then((data) => {
+  };
+
+  const handleSearchClick = () => {
+    // Only perform the fetch if search term is not empty
+    if (searchTerm.trim() === "") return;
+
+    // Fetch the Pokemon data using the PokeAPI
+    fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}`)
+      .then((response) => response.json())
+      .then((data) => {
         const pokemonData = {
           name: data.name,
           image: data.sprites.front_default,
@@ -108,7 +115,7 @@ export function Builder() {
           },
         };
         setSelectedPokemon(pokemonData);
-    })
+      })
   };
 
   const getStatWidth = (stat) => {
@@ -152,9 +159,10 @@ export function Builder() {
             placeholder="Search Pokemon"
             name="search"
             value={searchTerm}
+            onChange={handleSearchChange}
           />
           <button>
-            <i className="fa fa-search" onClick={handleSearchChange}>Search</i>
+            <i className="fa fa-search" onClick={handleSearchClick}>Search</i>
           </button>
         </form>
       </div>
