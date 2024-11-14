@@ -99,20 +99,16 @@ export function Builder() {
           name: data.name,
           image: data.sprites.front_default,
           stats: {
-            hp: data.stats.base_stat[0],
-            attack: data.stats.base_stat[1],
-            defense: data.stats.base_stat[2],
-            specialAttack: data.stats.base_stat[3],
-            specialDefense: data.stats.base_stat[4],
-            speed: data.stats.base_stat[5],
+            hp: data.stats.find(stat => stat.stat.name === 'hp').base_stat,
+            attack: data.stats.find(stat => stat.stat.name === 'attack').base_stat,
+            defense: data.stats.find(stat => stat.stat.name === 'defense').base_stat,
+            specialAttack: data.stats.find(stat => stat.stat.name === 'special-attack').base_stat,
+            specialDefense: data.stats.find(stat => stat.stat.name === 'special-defense').base_stat,
+            speed: data.stats.find(stat => stat.stat.name === 'speed').base_stat,
           },
         };
         setSelectedPokemon(pokemonData);
     })
-  };
-
-  const handlePokemonSelect = (pokemon) => {
-    setSelectedPokemon(pokemon);
   };
 
   const getStatWidth = (stat) => {
@@ -136,7 +132,7 @@ export function Builder() {
         <tbody>
           <tr>
             {pokemonList.map((pokemon, index) => (
-              <td key={index} onClick={() => handlePokemonSelect(pokemon)}>
+              <td key={index} onClick={() => setSelectedPokemon(pokemon)}>
                 <img src={pokemon.image} alt={pokemon.name} />
               </td>
             ))}
