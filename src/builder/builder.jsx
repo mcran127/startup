@@ -84,7 +84,7 @@ export function Builder() {
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedPokemon, setSelectedPokemon] = useState(pokemonList[0]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const filteredPokemon = pokemonList.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -112,15 +112,10 @@ export function Builder() {
             speed: data.stats.find(stat => stat.stat.name === 'speed').base_stat,
           },
         };
-        setSelectedPokemon(pokemonData);
         const updatedPokemonList = [...pokemonList];
-        const selectedIndex = pokemonList.findIndex(
-          (pokemon) => pokemon.name === "Choose your Pokemon"
-        );
-        if (selectedIndex !== -1) {
-          updatedPokemonList[selectedIndex] = pokemonData;
-          setPokemonList(updatedPokemonList);
-        }
+        updatedPokemonList[selectedIndex] = pokemonData;
+        setPokemonList(updatedPokemonList);
+        setSelectedIndex(selectedIndex);
       })
   };
 
@@ -145,13 +140,15 @@ export function Builder() {
         <tbody>
           <tr>
             {pokemonList.map((pokemon, index) => (
-              <td key={index} onClick={() => setSelectedPokemon(pokemon)}>
+              <td key={index} onClick={() => setSelectedIndex(index)} style={{
+                border: index === selectedIndex ? "2px solid yellow" : "none",
+              }}>
                 <img src={pokemon.image} alt={pokemon.name} />
               </td>
             ))}
           </tr>
           <tr>
-            {pokemonList.map((pokemon, index) => (
+          {pokemonList.map((pokemon, index) => (
               <td key={index}>{pokemon.name}</td>
             ))}
           </tr>
@@ -177,66 +174,66 @@ export function Builder() {
         <h2>Stats of Pokemon</h2>
         <div id="combined">
           <div id="currPokemon">
-            <img src={selectedPokemon.image} alt={selectedPokemon.name}></img>
+            <img src={pokemonList[selectedIndex].image} alt={pokemonList[selectedIndex].name}></img>
           </div>
           <table id="stats">
             <tr>
               <td>
                 <div
-                  className={`stat-bar ${getStatBarClass(selectedPokemon.stats.hp)}`}
-                  style={{ width: getStatWidth(selectedPokemon.stats.hp) }}
+                  className={`stat-bar ${getStatBarClass(pokemonList[selectedIndex].stats.hp)}`}
+                  style={{ width: getStatWidth(pokemonList[selectedIndex].stats.hp) }}
                 ></div>
               </td>
               <td>
                 <div
-                  className={`stat-bar ${getStatBarClass(selectedPokemon.stats.attack)}`}
-                  style={{ width: getStatWidth(selectedPokemon.stats.attack) }}
+                  className={`stat-bar ${getStatBarClass(pokemonList[selectedIndex].stats.attack)}`}
+                  style={{ width: getStatWidth(pokemonList[selectedIndex].stats.attack) }}
                 ></div>
               </td>
             </tr>
             <tr>
-              <td>{selectedPokemon.stats.hp}</td>
-              <td>{selectedPokemon.stats.attack}</td>
+              <td>{pokemonList[selectedIndex].stats.hp}</td>
+              <td>{pokemonList[selectedIndex].stats.attack}</td>
             </tr>
             <tr>
               <td>
                 <div
-                  className={`stat-bar ${getStatBarClass(selectedPokemon.stats.defense)}`}
-                  style={{ width: getStatWidth(selectedPokemon.stats.defense) }}
+                  className={`stat-bar ${getStatBarClass(pokemonList[selectedIndex].stats.defense)}`}
+                  style={{ width: getStatWidth(pokemonList[selectedIndex].stats.defense) }}
                 ></div>
               </td>
               <td>
                 <div
-                  className={`stat-bar ${getStatBarClass(selectedPokemon.stats.specialAttack)}`}
+                  className={`stat-bar ${getStatBarClass(pokemonList[selectedIndex].stats.specialAttack)}`}
                   style={{
-                    width: getStatWidth(selectedPokemon.stats.specialAttack),
+                    width: getStatWidth(pokemonList[selectedIndex].stats.specialAttack),
                   }}
                 ></div>
               </td>
             </tr>
             <tr>
-              <td>{selectedPokemon.stats.defense}</td>
-              <td>{selectedPokemon.stats.specialAttack}</td>
+              <td>{pokemonList[selectedIndex].stats.defense}</td>
+              <td>{pokemonList[selectedIndex].stats.specialAttack}</td>
             </tr>
             <tr>
               <td>
                 <div
-                  className={`stat-bar ${getStatBarClass(selectedPokemon.stats.specialDefense)}`}
+                  className={`stat-bar ${getStatBarClass(pokemonList[selectedIndex].stats.specialDefense)}`}
                   style={{
-                    width: getStatWidth(selectedPokemon.stats.specialDefense),
+                    width: getStatWidth(pokemonList[selectedIndex].stats.specialDefense),
                   }}
                 ></div>
               </td>
               <td>
                 <div
-                  className={`stat-bar ${getStatBarClass(selectedPokemon.stats.speed)}`}
-                  style={{ width: getStatWidth(selectedPokemon.stats.speed) }}
+                  className={`stat-bar ${getStatBarClass(pokemonList[selectedIndex].stats.speed)}`}
+                  style={{ width: getStatWidth(pokemonList[selectedIndex].stats.speed) }}
                 ></div>
               </td>
             </tr>
             <tr>
-              <td>{selectedPokemon.stats.specialDefense}</td>
-              <td>{selectedPokemon.stats.speed}</td>
+              <td>{pokemonList[selectedIndex].stats.specialDefense}</td>
+              <td>{pokemonList[selectedIndex].stats.speed}</td>
             </tr>
           </table>
         </div>
