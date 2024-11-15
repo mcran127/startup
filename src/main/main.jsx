@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import "./main.css";
 
 export function Main(props) {
+
+  const navigate = useNavigate();
 
   function logout(props) {
     fetch(`/api/auth/logout`, {
@@ -10,7 +13,7 @@ export function Main(props) {
     })
       .then(() => {
         localStorage.removeItem('userName');
-        props.onLogout();
+        navigate('/');
       });
   }
 

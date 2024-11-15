@@ -27,10 +27,6 @@ export function Login(props) {
           console.log('User created successfully', data); 
           localStorage.setItem('userName', userName);
           localStorage.setItem('token', data.token);
-          
-          props.onLogin(userName);
-          props.onAuthChange(userName, AuthState.Authenticated);
-          
           console.log('Navigating to /main');
           navigate('/main');
         } else {
@@ -54,8 +50,6 @@ export function Login(props) {
             const data = await response.json();
             localStorage.setItem('userName', userName);
             localStorage.setItem('token', data.token);
-            props.onLogin(userName);
-            props.onAuthChange(userName, AuthState.Authenticated);
             navigate('/main')
         } else {
             console.error('Login failed');
