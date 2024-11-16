@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./builder.css";
 
-export function Builder() {
+export function Builder(props) {
   const [pokemonList, setPokemonList] = useState([
     {
         name: "Choose your Pokemon",
@@ -86,6 +86,32 @@ export function Builder() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleSubmit = () => {
+    const selectedPokemon = pokemonList[0];
+    const newDeck = {
+      username: username,
+      pokemonImage: selectedPokemon.image,
+    };
+  
+    fetch('/api/newdeck', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newDeck),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Deck updated successfully');
+        } else {
+          console.error('Failed to update deck');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
 
   const filteredPokemon = pokemonList.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -241,7 +267,7 @@ export function Builder() {
       </div>
       <div id="SubmitButton">
         <NavLink to="/main">
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleSubmit}>Submit</button>
         </NavLink>
       </div>
     </main>

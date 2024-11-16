@@ -63,3 +63,21 @@ apiRouter.delete('/auth/logout', (req, res) => {
     res.status(404).send({ msg: 'User not found' });
   }
 });
+
+apiRouter.post('/newdeck', (req, res) => {
+    const { username, pokemonImage } = req.body;
+  
+    if (!username || !pokemonImage) {
+      return res.status(400).send({ msg: 'Username and Pokémon image are required' });
+    }
+  
+    if (!MainList[username]) {
+      MainList[username] = [];
+    }
+  
+    MainList[username].push(pokemonImage);
+  
+    console.log('MainList updated:', MainList);
+    
+    res.status(200).send({ msg: 'Deck updated successfully' });
+  });
