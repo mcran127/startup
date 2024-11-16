@@ -65,22 +65,25 @@ apiRouter.delete('/auth/logout', (req, res) => {
 });
 
 apiRouter.post('/newdeck', (req, res) => {
+    console.log('Request body:', req.body);
+
     const { username, imageUrl } = req.body;
-  
+
     if (!username || !imageUrl) {
-      return res.status(400).send({ msg: 'Username and Pokémon image are required' });
+        return res.status(400).send({ msg: 'Username and Pokémon image are required' });
     }
-  
+
     MainList.unshift({ username, imageUrl });
 
     if (MainList.length > 8) {
         MainList.pop();
-      }
-  
+    }
+
     console.log('MainList updated:', MainList);
     
     res.status(200).send({ msg: 'Deck updated successfully' });
-  });
+});
+
 
   apiRouter.get('/newdeck', (req, res) => {
     const token = req.headers['authorization']?.split(' ')[1];
@@ -92,3 +95,4 @@ apiRouter.post('/newdeck', (req, res) => {
     const userDecks = MainList.filter(deck => deck.username === user.username);
     res.json({ decks: userDecks });
 });
+
