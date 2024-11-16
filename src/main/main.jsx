@@ -20,8 +20,6 @@ export function Main(props) {
     .then(() => {
         localStorage.removeItem('userName');
         localStorage.removeItem('token');
-        setAuthState(AuthState.Unauthenticated);
-        setUserName('');
         props.onLogout();
         navigate('/');
     })
