@@ -96,6 +96,8 @@ export function Builder(props) {
       username: userName,
       imageUrl: selectedPokemon.image,
     };
+
+    console.log(newDeck);
   
     fetch('/api/newdeck', {
       method: 'POST',
