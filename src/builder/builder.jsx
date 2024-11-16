@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./builder.css";
 
 export function Builder() {
@@ -239,9 +240,9 @@ export function Builder() {
         </div>
       </div>
       <div id="SubmitButton">
-        <a href="main">
+        <NavLink to="/main">
           <button type="submit">Submit</button>
-        </a>
+        </NavLink>
       </div>
     </main>
   );
