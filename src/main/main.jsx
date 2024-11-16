@@ -11,23 +11,25 @@ export function Main(props) {
     const token = localStorage.getItem('token');
   
     fetch(`/api/auth/logout`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ token })
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token })
     })
     .then(() => {
-      localStorage.removeItem('userName');
-      localStorage.removeItem('token');
-      setAuthState(AuthState.Unauthenticated);
-      setUserName(''); 
-      navigate('/');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('token');
+        setAuthState(AuthState.Unauthenticated);
+        setUserName('');
+        props.onLogout();
+        navigate('/');
     })
     .catch((error) => {
-      console.error('Logout failed:', error);
+        console.error('Logout failed:', error);
     });
-  }
+}
+
 
   const [decks, setDecks] = useState([
     {

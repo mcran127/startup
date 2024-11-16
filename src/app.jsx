@@ -17,7 +17,7 @@ function App() {
     localStorage.removeItem('token');
     setUserName('');
     setAuthState(AuthState.Unauthenticated);
-  }
+}
 
   return (
     <BrowserRouter>
