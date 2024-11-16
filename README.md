@@ -29,3 +29,11 @@ For this deliverable, I transfered my previous html files into a javascript/jsx 
 *Builder changed the most, having the search bar prepared to add stuff to the team, currently selected pokemon has picture and stats shown, and stats are represented by a progress bar element
 *Still able to move between components through buttons and now a sidebar.
 *Hooks allow various states like currPokemon to be updated
+
+## Service Deliverable
+
+For this deliverable I added backend options first to a 3rd party that gets pokemon and their stats, and then to my own for calls to login and the decks
+*Node index.js for service
+*3rd party call of pokeapi in builder page
+*use of post and get for builder to submit decks and main page to retrieve them
+*placeholder for login and logou service. Too lazy to format it with css though. oops
