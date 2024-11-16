@@ -94,7 +94,7 @@ export function Builder(props) {
     const selectedPokemon = pokemonList[0];
     const newDeck = {
       username: userName,
-      pokemonImage: selectedPokemon.image,
+      imageUrl: selectedPokemon.image,
     };
   
     fetch('/api/newdeck', {

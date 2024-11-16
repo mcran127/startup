@@ -65,13 +65,13 @@ apiRouter.delete('/auth/logout', (req, res) => {
 });
 
 apiRouter.post('/newdeck', (req, res) => {
-    const { username, pokemonImage } = req.body;
+    const { username, imageUrl } = req.body;
   
-    if (!username || !pokemonImage) {
+    if (!username || !imageUrl) {
       return res.status(400).send({ msg: 'Username and Pokémon image are required' });
     }
   
-    MainList.unshift({ username, pokemonImage });
+    MainList.unshift({ username, imageUrl });
 
     if (MainList.length > 8) {
         MainList.pop();
