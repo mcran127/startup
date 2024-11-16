@@ -4,8 +4,35 @@ import { useNavigate } from 'react-router-dom';
 import "./main.css";
 
 export function Main(props) {
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('userName');
+
+    if (token && username) {
+        fetch(`/api/newdeck`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data && data.decks) {
+                setDecks(data.decks);
+            } else {
+                setDecks([]);
+            }
+        })
+        .catch((error) => {
+            console.error('Error fetching decks:', error);
+            setDecks([]);
+        });
+    }
+}, []);
+
 
   function logout() {
     const token = localStorage.getItem('token');
@@ -31,8 +58,22 @@ export function Main(props) {
 
   const [decks, setDecks] = useState([
     {
-      title: "TITLE",
-      name: "NAME",
+      username: "TITLE",
+      imageUrl:
+        "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
+    },
+    {
+      username: "TITLE",
+      imageUrl:
+        "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
+    },
+    {
+      username: "TITLE",
+      imageUrl:
+        "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
+    },
+    {
+      username: "TITLE",
       imageUrl:
         "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
     },
@@ -43,38 +84,17 @@ export function Main(props) {
         "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
     },
     {
-      title: "TITLE",
-      name: "NAME",
+      username: "TITLE",
       imageUrl:
         "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
     },
     {
-      title: "TITLE",
-      name: "NAME",
+      username: "TITLE",
       imageUrl:
         "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
     },
     {
-      title: "TITLE",
-      name: "NAME",
-      imageUrl:
-        "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
-    },
-    {
-      title: "TITLE",
-      name: "NAME",
-      imageUrl:
-        "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
-    },
-    {
-      title: "TITLE",
-      name: "NAME",
-      imageUrl:
-        "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
-    },
-    {
-      title: "TITLE",
-      name: "NAME",
+      username: "TITLE",
       imageUrl:
         "https://static.wikia.nocookie.net/257d534d-755d-4547-be64-dabb04fac8b9/scale-to-width/755",
     },
@@ -106,7 +126,7 @@ export function Main(props) {
                 <tr>
                   {row.map((deck, index) => (
                     <th key={`title-${rowIndex}-${index}`}>
-                      {`${deck.title} by ${deck.name}`}
+                      {`${deck.username}`}
                     </th>
                   ))}
                 </tr>

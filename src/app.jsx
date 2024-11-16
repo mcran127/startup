@@ -64,7 +64,7 @@ function App() {
             exact
           />
           <Route path="/main" element={<Main onLogout={handleLogout} />} />
-          <Route path='/builder' element={<Builder />} />
+          <Route path='/builder' element={<Builder userName={userName} />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
 

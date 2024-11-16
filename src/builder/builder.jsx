@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import "./builder.css";
 
 export function Builder(props) {
+  const { userName } = props;
+  const navigate = useNavigate();
+
   const [pokemonList, setPokemonList] = useState([
     {
         name: "Choose your Pokemon",
@@ -90,7 +93,7 @@ export function Builder(props) {
   const handleSubmit = () => {
     const selectedPokemon = pokemonList[0];
     const newDeck = {
-      username: username,
+      username: userName,
       pokemonImage: selectedPokemon.image,
     };
   
@@ -104,6 +107,7 @@ export function Builder(props) {
       .then((response) => {
         if (response.ok) {
           console.log('Deck updated successfully');
+          navigate('/main');
         } else {
           console.error('Failed to update deck');
         }
@@ -266,9 +270,7 @@ export function Builder(props) {
         </div>
       </div>
       <div id="SubmitButton">
-        <NavLink to="/main">
-          <button type="submit" onClick={handleSubmit}>Submit</button>
-        </NavLink>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
       </div>
     </main>
   );

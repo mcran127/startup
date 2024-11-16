@@ -3,7 +3,7 @@ const app = express();
 const uuid = require('uuid');
 
 let users = {};
-let MainList = {};
+let MainList = [];
 
 app.use(express.json());
 
@@ -71,13 +71,24 @@ apiRouter.post('/newdeck', (req, res) => {
       return res.status(400).send({ msg: 'Username and Pokémon image are required' });
     }
   
-    if (!MainList[username]) {
-      MainList[username] = [];
-    }
-  
-    MainList[username].push(pokemonImage);
+    MainList.unshift({ username, pokemonImage });
+
+    if (MainList.length > 8) {
+        MainList.pop();
+      }
   
     console.log('MainList updated:', MainList);
     
     res.status(200).send({ msg: 'Deck updated successfully' });
   });
+
+  apiRouter.get('/newdeck', (req, res) => {
+    const token = req.headers['authorization']?.split(' ')[1];
+    if (!token) return res.status(400).send({ msg: 'Token is required' });
+
+    const user = Object.values(users).find(u => u.token === token);
+    if (!user) return res.status(404).send({ msg: 'User not found' });
+
+    const userDecks = MainList.filter(deck => deck.username === user.username);
+    res.json({ decks: userDecks });
+});
