@@ -7,14 +7,26 @@ export function Main(props) {
 
   const navigate = useNavigate();
 
-  function logout(props) {
+  function logout() {
+    const token = localStorage.getItem('token');
+  
     fetch(`/api/auth/logout`, {
       method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ token })
     })
-      .then(() => {
-        localStorage.removeItem('userName');
-        navigate('/');
-      });
+    .then(() => {
+      localStorage.removeItem('userName');
+      localStorage.removeItem('token');
+      setAuthState(AuthState.Unauthenticated);
+      setUserName(''); 
+      navigate('/');
+    })
+    .catch((error) => {
+      console.error('Logout failed:', error);
+    });
   }
 
   const [decks, setDecks] = useState([

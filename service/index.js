@@ -48,9 +48,18 @@ apiRouter.post('/auth/login', (req, res) => {
   
 
 apiRouter.delete('/auth/logout', (req, res) => {
-    const user = Object.values(users).find((u) => u.token === req.body.token);
-    if (user) {
-      delete user.token;
-    }
+    const { token } = req.body;
+
+  if (!token) {
+    return res.status(400).send({ msg: 'Token is required' });
+  }
+
+  const user = Object.values(users).find((u) => u.token === token);
+  
+  if (user) {
+    delete user.token;
     res.status(204).end();
+  } else {
+    res.status(404).send({ msg: 'User not found' });
+  }
 });
