@@ -26,6 +26,7 @@ async function main() {
   };
   await collection.insertOne(house);
 
+  // Query the documents
   const query = { property_type: 'Condo', beds: { $lt: 2 } };
   const options = {
     sort: { score: -1 },
