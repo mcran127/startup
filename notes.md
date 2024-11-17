@@ -355,7 +355,7 @@ GraphQL focuses on data manip instead of function call or resource. Query that j
 
 # Data and Athentication Services
 
-## Uploading Files
+## Data Services
 
 HTML input of type file and multer on the backend. Can choose to accept certain types like .png, .jpeg, etc.
 Frontend handles upload and the returned name is set to the image src.  Need to npm install multer. Handles static files, errors, and a get endpoint. don't do it on our server, use a storage service.
@@ -363,3 +363,9 @@ Frontend handles upload and the returned name is set to the image src.  Need to 
 Storage services like AWS S3 is good because unlimited capacity, only pay for what you use, redundant copies, etc.
 
 Data Services like SQl and others like NoSQL are used to handle data, focusing on more NoSQL since better for other things like key pairs and json. MongoDB is json which we use. Mongo has no schema requirements, use.find
+
+## Startup Login
+
+Authentication often a token saved as a cookie sent on future requests. SSO allows same login for different applications like github using google.
+
+Wants 2 endpoints, a login and a create. Create takes username and password and returns a token or an error (409) implying conflict. login takes the same and returns the same token unless it doesn't exist or wrong password (401 unauthorized). GetMe endpoint uses auth token in cookie to return info about user.
