@@ -352,3 +352,14 @@ Web services should be for the user. Divided into endpoints with a functional pu
 discover other things, compatibility, documentable, and simplicity. RPC or remote procedure calls expose endpoints as functions. Maps directly to function calls
 but might expose inner workings. REST is representative state transfer allowing for caching optimization. Get will always get the same thing until put.
 GraphQL focuses on data manip instead of function call or resource. Query that joins or filters. Such as get all orders filtering by date. Only 1 endpoint.
+
+# Data and Athentication Services
+
+## Uploading Files
+
+HTML input of type file and multer on the backend. Can choose to accept certain types like .png, .jpeg, etc.
+Frontend handles upload and the returned name is set to the image src.  Need to npm install multer. Handles static files, errors, and a get endpoint. don't do it on our server, use a storage service.
+
+Storage services like AWS S3 is good because unlimited capacity, only pay for what you use, redundant copies, etc.
+
+Data Services like SQl and others like NoSQL are used to handle data, focusing on more NoSQL since better for other things like key pairs and json. MongoDB is json which we use. Mongo has no schema requirements, use.find
