@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const uuid = require('uuid');
+const cookieParser = require('cookie-parser');
+const bcrypt = require('bcrypt');
+const DB = require('./database.js');
+
+const authCookieName = 'token';
 
 let users = {};
 let MainList = [];
@@ -96,3 +101,10 @@ apiRouter.post('/newdeck', (req, res) => {
     res.json({ decks: userDecks });
 });
 
+function setAuthCookie(res, authToken) {
+  res.cookie(authCookieName, authToken, {
+    secure: true,
+    httpOnly: true,
+    sameSite: 'strict',
+  });
+}
