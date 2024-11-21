@@ -369,3 +369,5 @@ Data Services like SQl and others like NoSQL are used to handle data, focusing o
 Authentication often a token saved as a cookie sent on future requests. SSO allows same login for different applications like github using google.
 
 Wants 2 endpoints, a login and a create. Create takes username and password and returns a token or an error (409) implying conflict. login takes the same and returns the same token unless it doesn't exist or wrong password (401 unauthorized). GetMe endpoint uses auth token in cookie to return info about user.
+
+Secure is https only, httpOnly is not allow JS to read the cookie, and sameSite will only return to the site that generated it.
