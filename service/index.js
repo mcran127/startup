@@ -14,6 +14,10 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
+app.use(cookieParser());
+
+app.set('trust proxy', true);
+
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
