@@ -36,7 +36,6 @@ export function Main(props) {
 
 
   function logout() {
-    const token = localStorage.getItem('token');
   
     fetch(`/api/auth/logout`, {
         method: 'DELETE',
@@ -47,7 +46,6 @@ export function Main(props) {
     })
     .then(() => {
         localStorage.removeItem('userName');
-        localStorage.removeItem('token');
         props.onLogout();
         navigate('/');
     })
