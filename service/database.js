@@ -23,11 +23,11 @@ const db = client.db('startup');
     return userCollection.findOne({ token: token });
   }
   
-  async function createUser(email, password) {
+  async function createUser(username, password) {
     const passwordHash = await bcrypt.hash(password, 10);
   
     const user = {
-      email: email,
+      username: username,
       password: passwordHash,
       token: uuid.v4(),
     };
@@ -35,3 +35,9 @@ const db = client.db('startup');
   
     return user;
   }
+
+  module.exports = {
+    getUser,
+    getUserByToken,
+    createUser,
+  };

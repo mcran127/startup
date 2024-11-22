@@ -7,7 +7,6 @@ const DB = require('./database.js');
 
 const authCookieName = 'token';
 
-let users = {};
 let MainList = [];
 
 app.use(express.json());
@@ -31,27 +30,29 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-apiRouter.post('/auth/login', (req, res) => {
-    const { username, password } = req.body;
-    const user = users[username];
+apiRouter.post('/auth/login', async (req, res) => {
+    const user = await DB.getUser(req.body.username);
   
-    if (user && user.password === password) {
-      res.send({ token: user.token });
-    } else {
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      setAuthCookie(res, user.token);
+      res.send({ id: user._id });
+      return;
+    }
+    else {
       res.status(401).send({ msg: 'Invalid credentials' });
     }
   });
   
 
   apiRouter.post('/auth/create', async (req, res) => {
-    const existingUser = users[req.body.username];
-    if (existingUser) {
+    if (await DB.getUser(req.body.username)) {
       res.status(409).send({ msg: 'Existing user' });
     } else {
-      const newUser = { username: req.body.username, password: req.body.password, token: uuid.v4() };
-      users[newUser.username] = newUser;
+      const newUser = DB.createUser(req.body.username, req.body.password);
+
+      setAuthCookie(res, user.token);
     
-      res.send({ token: newUser.token });
+      res.send({ id: user._id, });
     }
   });
   
