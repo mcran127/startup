@@ -57,22 +57,24 @@ apiRouter.post('/auth/login', async (req, res) => {
   });
   
 
-apiRouter.delete('/auth/logout', (req, res) => {
-    const { token } = req.body;
-
-  if (!token) {
-    return res.status(400).send({ msg: 'Token is required' });
-  }
-
-  const user = Object.values(users).find((u) => u.token === token);
-  
-  if (user) {
-    delete user.token;
+  apiRouter.delete('/auth/logout', (_req, res) => {
+    res.clearCookie(authCookieName);
     res.status(204).end();
+  });
+
+  const secureApiRouter = express.Router();
+apiRouter.use(secureApiRouter);
+
+secureApiRouter.use(async (req, res, next) => {
+  const authToken = req.cookies[authCookieName];
+  const user = await DB.getUserByToken(authToken);
+  if (user) {
+    next();
   } else {
-    res.status(404).send({ msg: 'User not found' });
+    res.status(401).send({ msg: 'Unauthorized' });
   }
 });
+  
 
 apiRouter.post('/newdeck', (req, res) => {
     console.log('Request body:', req.body);
