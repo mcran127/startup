@@ -36,7 +36,7 @@ apiRouter.post('/auth/login', async (req, res) => {
     if (user) {
       if (await bcrypt.compare(req.body.password, user.password)) {
         setAuthCookie(res, user.token);
-        res.send({ id: user._id });
+        res.send({ id: user._id, token: user.token });
         return;
       }
     }
@@ -48,11 +48,11 @@ apiRouter.post('/auth/login', async (req, res) => {
     if (await DB.getUser(req.body.username)) {
       res.status(409).send({ msg: 'Existing user' });
     } else {
-      const user = DB.createUser(req.body.username, req.body.password);
+      const user = await DB.createUser(req.body.username, req.body.password);
 
       setAuthCookie(res, user.token);
     
-      res.send({ id: user._id, });
+      res.send({ id: user._id, token: user.token });
     }
   });
   

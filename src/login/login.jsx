@@ -43,21 +43,22 @@ export function Login(props) {
             method: 'POST',
             body: JSON.stringify({ username: userName, password: password }),
             headers: {
-              'Content-type': 'application/json; charset=UTF-8',
+                'Content-type': 'application/json; charset=UTF-8',
             },
         });
     
-        if (response?.status === 200) {
+        if (response.status === 200) {
             const data = await response.json();
             localStorage.setItem('userName', userName);
             localStorage.setItem('token', data.token);
             props.onAuthChange(userName, AuthState.Authenticated);
-            navigate('/main')
+            navigate('/main');
         } else {
             console.error('Login failed');
             alert('Login failed: Invalid credentials');
         }
     }
+    
     
 
   return (
