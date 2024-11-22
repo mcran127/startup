@@ -85,6 +85,8 @@ apiRouter.post('/newdeck', async (req, res) => {
 
     const newDeck = {username, imageUrl};
     await DB.addDeck(newDeck);
+    const decks = await DB.getDecks();
+    res.send(decks);
 });
 
 

@@ -40,7 +40,7 @@ const mainDecks = db.collection('decks')
   }
 
   async function addDeck(deck) {
-    return decks.insertOne(deck);
+    return mainDecks.insertOne(deck);
   }
 
   function getDecks(deck) {
