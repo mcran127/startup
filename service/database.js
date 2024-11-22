@@ -40,7 +40,11 @@ const mainDecks = db.collection('decks')
   }
 
   async function addDeck(deck) {
-    return mainDecks.insertOne(deck);
+    return decks.insertOne(deck);
+  }
+
+  function getDecks(deck) {
+    return;
   }
 
   module.exports = {
@@ -48,4 +52,5 @@ const mainDecks = db.collection('decks')
     getUserByToken,
     createUser,
     addDeck,
+    getDecks,
   };
