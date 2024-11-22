@@ -40,7 +40,11 @@ const mainDecks = db.collection('decks')
   }
 
   async function addDeck(deck) {
-    return mainDecks.insertOne(deck);
+    newDeck = {
+        username: deck.username,
+        imageUrl: deck.imageUrl,
+    };
+    return mainDecks.insertOne(newDeck);
   }
 
   function getDecks(deck) {
