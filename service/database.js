@@ -8,6 +8,7 @@ const client = new MongoClient(url);
 const db = client.db('startup');
 
 const userCollection = db.collection('user');
+const mainDecks = db.collection('decks')
 
 (async function testConnection() {
     await client.connect();
@@ -38,8 +39,13 @@ const userCollection = db.collection('user');
     return user;
   }
 
+  async function addDeck(deck) {
+    return mainDecks.insertOne(deck);
+  }
+
   module.exports = {
     getUser,
     getUserByToken,
     createUser,
+    addDeck,
   };

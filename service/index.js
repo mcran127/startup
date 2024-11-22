@@ -7,8 +7,6 @@ const DB = require('./database.js');
 
 const authCookieName = 'token';
 
-let MainList = [];
-
 app.use(express.json());
 
 app.use(express.static('public'));
@@ -76,7 +74,7 @@ secureApiRouter.use(async (req, res, next) => {
 });
   
 
-apiRouter.post('/newdeck', (req, res) => {
+apiRouter.post('/newdeck', async (req, res) => {
     console.log('Request body:', req.body);
 
     const { username, imageUrl } = req.body;
@@ -85,15 +83,8 @@ apiRouter.post('/newdeck', (req, res) => {
         return res.status(400).send({ msg: 'Username and Pokémon image are required' });
     }
 
-    MainList.unshift({ username, imageUrl });
-
-    if (MainList.length > 8) {
-        MainList.pop();
-    }
-
-    console.log('MainList updated:', MainList);
-    
-    res.status(200).send({ msg: 'Deck updated successfully' });
+    const newDeck = {username, imageUrl};
+    await DB.addDeck(newDeck);
 });
 
 
