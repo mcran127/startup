@@ -42,7 +42,6 @@ export function Main(props) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token })
     })
     .then(() => {
         localStorage.removeItem('userName');
