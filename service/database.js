@@ -17,8 +17,8 @@ const userCollection = db.collection('user');
     process.exit(1);
   });
 
-  function getUser(email) {
-    return userCollection.findOne({ email: email });
+  function getUser(username) {
+    return userCollection.findOne({ username: username });
   }
   
   function getUserByToken(token) {
