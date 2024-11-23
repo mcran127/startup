@@ -92,7 +92,7 @@ apiRouter.post('/newdeck', async (req, res) => {
 
   apiRouter.get('/newdeck', async (req, res) => {
     const decks = await DB.getDecks();
-    res.send(decks);
+    res.send({decks});
 });
 
 function setAuthCookie(res, authToken) {
