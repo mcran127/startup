@@ -8,7 +8,7 @@ const client = new MongoClient(url);
 const db = client.db('startup');
 
 const userCollection = db.collection('user');
-const mainDecks = db.collection('decks')
+const mainDecks = db.collection('decks');
 
 (async function testConnection() {
     await client.connect();
