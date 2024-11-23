@@ -7,30 +7,24 @@ export function Main(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const username = localStorage.getItem('userName');
-
-    if (token && username) {
-        fetch(`/api/newdeck`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            if (data && data.decks) {
-                setDecks(data.decks);
-            } else {
-                setDecks([]);
-            }
-        })
-        .catch((error) => {
-            console.error('Error fetching decks:', error);
-            setDecks([]);
-        });
-    }
+    fetch(`/api/newdeck`, {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+  })
+  .then((response) => response.json())
+  .then((data) => {
+      if (data && data.decks) {
+          setDecks(data.decks);
+      } else {
+          setDecks([]);
+      }
+  })
+  .catch((error) => {
+      console.error('Error fetching decks:', error);
+      setDecks([]);
+  });
 }, []);
 
 
