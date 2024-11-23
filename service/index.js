@@ -18,7 +18,7 @@ app.set('trust proxy', true);
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-const port = process.argv.length > 2 ? process.argv[2] : 8080;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
