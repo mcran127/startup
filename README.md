@@ -37,3 +37,11 @@ For this deliverable I added backend options first to a 3rd party that gets poke
 *3rd party call of pokeapi in builder page
 *use of post and get for builder to submit decks and main page to retrieve them
 *placeholder for login and logou service. Too lazy to format it with css though. oops
+
+## Login Deliverable
+
+For this deliverable, I added database functionality that worked with login and getting/storing decks
+*Created MongoDB database
+*Store login info along with a list of decks
+*Works with create user and login
+*Checks for existing users
