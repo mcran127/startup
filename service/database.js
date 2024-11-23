@@ -40,15 +40,16 @@ const mainDecks = db.collection('decks')
   }
 
   async function addDeck(deck) {
-    newDeck = {
-        username: deck.username,
-        imageUrl: deck.imageUrl,
-    };
-    return mainDecks.insertOne(newDeck);
+    return mainDecks.insertOne(deck);
   }
 
   function getDecks(deck) {
-    return;
+    const pipeline = [
+        { $project: { username: 1, imageUrl: 1 } },
+        { $sample: { size: 8 } } 
+      ];
+  const cursor = mainDecks.aggregate(pipeline);
+  return cursor.toArray();
   }
 
   module.exports = {

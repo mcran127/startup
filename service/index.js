@@ -90,15 +90,9 @@ apiRouter.post('/newdeck', async (req, res) => {
 });
 
 
-  apiRouter.get('/newdeck', (req, res) => {
-    const token = req.headers['authorization']?.split(' ')[1];
-    if (!token) return res.status(400).send({ msg: 'Token is required' });
-
-    const user = Object.values(users).find(u => u.token === token);
-    if (!user) return res.status(404).send({ msg: 'User not found' });
-
-    const userDecks = MainList.filter(deck => deck.username === user.username);
-    res.json({ decks: userDecks });
+  apiRouter.get('/newdeck', async (req, res) => {
+    const decks = await DB.getDecks();
+  res.send(decks);
 });
 
 function setAuthCookie(res, authToken) {
