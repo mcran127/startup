@@ -376,3 +376,4 @@ Secure is https only, httpOnly is not allow JS to read the cookie, and sameSite 
 
 ## Startup Websocket
 
+Websocket allows for data to be sent peer to peer/waiting for client/server to send to the other. Web sockets are only between 2 parties so it'd have to be to a server and then to everything else.
