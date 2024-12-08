@@ -45,3 +45,11 @@ For this deliverable, I added database functionality that worked with login and 
 *Store login info along with a list of decks
 *Works with create user and login
 *Checks for existing users
+
+## Websocket Deliverable
+
+For this deliverable I used websocket functionality to announce when decks are made to those who are building decks
+*Backend listens for connection
+*Frontend makes connection
+*Data properly sent
+*Announcement made to those building decks that someone made a new deck
