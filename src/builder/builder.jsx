@@ -7,6 +7,8 @@ export function Builder(props) {
   const { userName } = props;
   const navigate = useNavigate();
 
+  const [events, setEvent] = React.useState([]);
+
   React.useEffect(() => {
     DeckNotifier.addHandler(handleGameEvent);
 
