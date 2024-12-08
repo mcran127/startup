@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { NewDeck, NewDeckNotifier } from './newDeck';
+import { NewDeck, DeckNotifier } from './newDeck';
 import "./builder.css";
 
 export function Builder(props) {
@@ -8,10 +8,10 @@ export function Builder(props) {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    GameNotifier.addHandler(handleGameEvent);
+    DeckNotifier.addHandler(handleGameEvent);
 
     return () => {
-      GameNotifier.removeHandler(handleGameEvent);
+      DeckNotifier.removeHandler(handleGameEvent);
     };
   });
 
@@ -23,12 +23,8 @@ export function Builder(props) {
     const messageArray = [];
     for (const [i, event] of events.entries()) {
       let message = 'unknown';
-      if (event.type === GameEvent.End) {
-        message = `scored ${event.value.score}`;
-      } else if (event.type === GameEvent.Start) {
-        message = `started a new game`;
-      } else if (event.type === GameEvent.System) {
-        message = event.value.msg;
+      if (event.type === GameEvent.Start) {
+        message = `a new dck was made`;
       }
 
       messageArray.push(
