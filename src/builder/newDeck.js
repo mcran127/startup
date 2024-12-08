@@ -4,7 +4,7 @@ const NewDeck = {
   };
   
   class EventMessage {
-    constructor(from, type, value) {
+    constructor(from, type) {
       this.from = from;
       this.type = type;
     }
@@ -19,10 +19,10 @@ const NewDeck = {
       const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
       this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
       this.socket.onopen = (event) => {
-        this.receiveEvent(new EventMessage('Simon', GameEvent.System, { msg: 'connected' }));
+        this.receiveEvent(new EventMessage('Simon', GameEvent.System));
       };
       this.socket.onclose = (event) => {
-        this.receiveEvent(new EventMessage('Simon', GameEvent.System, { msg: 'disconnected' }));
+        this.receiveEvent(new EventMessage('Simon', GameEvent.System));
       };
       this.socket.onmessage = async (msg) => {
         try {
@@ -32,7 +32,7 @@ const NewDeck = {
       };
     }
 
-    broadcastEvent(from, type, value) {
+    broadcastEvent(from, type) {
         const event = new EventMessage(from, type);
         this.socket.send(JSON.stringify(event));
       }
