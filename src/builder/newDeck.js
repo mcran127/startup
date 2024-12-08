@@ -19,10 +19,10 @@ const NewDeck = {
       const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
       this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
       this.socket.onopen = (event) => {
-        this.receiveEvent(new EventMessage('Simon', GameEvent.System));
+        this.receiveEvent(new EventMessage('Simon', NewDeck.System));
       };
       this.socket.onclose = (event) => {
-        this.receiveEvent(new EventMessage('Simon', GameEvent.System));
+        this.receiveEvent(new EventMessage('Simon', NewDeck.System));
       };
       this.socket.onmessage = async (msg) => {
         try {
