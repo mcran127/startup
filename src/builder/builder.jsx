@@ -132,6 +132,8 @@ export function Builder(props) {
       imageUrl: selectedPokemon.image,
     };
 
+    NewDeckNotifier.broadcastEvent(userName, NewDeck.Start);
+
     console.log(newDeck);
   
     fetch('/api/newdeck', {

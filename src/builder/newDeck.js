@@ -1,14 +1,12 @@
 const NewDeck = {
     System: 'system',
-    End: 'gameEnd',
-    Start: 'gameStart',
+    Start: 'New Deck',
   };
   
   class EventMessage {
     constructor(from, type, value) {
       this.from = from;
       this.type = type;
-      this.value = value;
     }
   }
 
@@ -35,7 +33,7 @@ const NewDeck = {
     }
 
     broadcastEvent(from, type, value) {
-        const event = new EventMessage(from, type, value);
+        const event = new EventMessage(from, type);
         this.socket.send(JSON.stringify(event));
       }
     
