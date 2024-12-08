@@ -56,5 +56,5 @@ const NewDeck = {
       }
 }
 
-    const NewDeckNotifier = new NewDeckNotifier();
-    export { NewDeck, NewDeckNotifier };
+    const DeckNotifier = new NewDeckNotifier();
+    export { NewDeck, DeckNotifier};
