@@ -4,6 +4,7 @@ const uuid = require('uuid');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -102,3 +103,5 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
+
+peerProxy(httpService);
