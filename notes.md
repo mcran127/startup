@@ -377,3 +377,25 @@ Secure is https only, httpOnly is not allow JS to read the cookie, and sameSite 
 ## Startup Websocket
 
 Websocket allows for data to be sent peer to peer/waiting for client/server to send to the other. Web sockets are only between 2 parties so it'd have to be to a server and then to everything else.
+
+
+# Final
+
+HTTP 80, HTTPS 443, SSH 22
+300 is redirection, 400 is client error, 500 server error
+Indicates media type, content type, cookie, host not language
+Check for delete, put, etc. focus on order and headings
+hash codes
+focus on order. browser -> socket
+websocket peer instead of server
+jsx componentize, composability, and render html from js, not combine css html and js
+javascript (xml), amazon web service, node packet manager, node version manager
+focus up nerd
+state remember stuff like input, context recieves from other, ref holds non rendering info, effect connects with external system like animations, widgets, and non react code, perfromance reused cached so optimize.
+package configures and describes application
+fetch, use url and method to do something to another source
+runs js code outside browser
+daemon process manager. starts and stops services. background stuff
+frontend build tool, compiles quickly, and optimization
+
+Cookies are for server storing on client
